@@ -1,0 +1,12 @@
+{
+  "Index": {
+    "nav": {
+      "home": "início",
+      "about": "sobre nós",
+      "service": "serviços",
+      "project": "projetos",
+      "contact": "contato",
+      "order": "peça agora"
+    }
+  }
+}

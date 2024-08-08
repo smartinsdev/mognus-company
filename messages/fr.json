@@ -1,0 +1,12 @@
+{
+  "Index": {
+    "nav": {
+      "home": "accueil",
+      "about": "à propos",
+      "service": "services",
+      "project": "projets",
+      "contact": "contact",
+      "order": "demander ici"
+    }
+  }
+}
