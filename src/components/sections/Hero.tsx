@@ -8,11 +8,11 @@ export function Hero() {
   const t = useTranslations("Index");
   return (
     <section className="min-h-dvh max-w-[1440px] mx-auto pt-28 relative flex flex-col items-center">
-      <div className="flex flex-col space-y-3 relative mb-6 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 px-6 lg:z-10">
+      <div className="flex flex-col space-y-3 relative mb-6 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 px-4 lg:z-10">
         <span className="uppercase animate-in fade-in-0 slide-in-from-left-10 duration-1000 text-center lg:text-start tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">
           {t("hero.subtitle")}
         </span>
-        <h1 className="text-3xl animate-in fade-in-0 slide-in-from-left-10 duration-1000 sm:text-4xl md:max-w-2xl  lg:max-w-[43rem] text-center lg:text-start  lg:text-5xl xl:text-7xl font-poppins leading-snug capitalize font-extrabold">
+        <h1 className="text-4xl animate-in fade-in-0 slide-in-from-left-10 duration-1000 md:max-w-2xl  lg:max-w-[43rem] text-center lg:text-start  lg:text-5xl xl:text-7xl font-poppins leading-snug capitalize font-extrabold">
           {t.rich("hero.title", {
             guidelines: (chunks) => (
               <span className="text-transparent bg-clip-text bg-gradient-to-tr from-orange-400 via-primary to-red-300">
