@@ -8,5 +8,11 @@
       "contact": "contact",
       "order": "demander ici"
     }
+  },
+  "SwitchLang": {
+    "title": "choisir la langue",
+    "en": "anglais",
+    "fr": "Français",
+    "pt": "Portugais"
   }
 }

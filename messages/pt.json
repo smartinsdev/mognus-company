@@ -8,5 +8,11 @@
       "contact": "contato",
       "order": "peça agora"
     }
+  },
+  "SwitchLang": {
+    "title": "Escolha o idioma",
+    "en": "inglês",
+    "fr": "francês",
+    "pt": "português"
   }
 }

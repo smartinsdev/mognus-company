@@ -63,7 +63,10 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+}
+
+@layer components {
+  .letter-logo {
+    @apply fill-foreground;
   }
 }

@@ -7,6 +7,8 @@ import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { cn } from "@/lib/utils";
 import { locales } from "@/i18n-config";
 import "../globals.css";
+import NavBar from "@/components/header/NavBar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -41,16 +43,24 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background antialiased font-montserrat min-h-screen",
+          "bg-background text-foreground antialiased font-montserrat min-h-screen",
           montserrat.variable,
           poppins.variable
         )}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NavBar />
+            {children}
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
