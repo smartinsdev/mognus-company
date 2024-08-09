@@ -7,6 +7,15 @@
       "project": "projects",
       "contact": "contact",
       "order": "order now"
+    },
+    "hero": {
+      "subtitle": "the luxury of made to measure",
+      "title": "turn your ideas into <guidelines>extraordinary furniture</guidelines> with Mognu's",
+      "paragraph": "We are Mognu's, a carpentry company specializing in creating bespoke furniture. We believe that true luxury lies in having unique furniture, made to measure for each client.",
+      "buttons": {
+        "primary": "Getting a quote",
+        "secundary": "See our Projects"
+      }
     }
   },
   "SwitchLang": {

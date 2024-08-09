@@ -7,6 +7,15 @@
       "project": "projetos",
       "contact": "contato",
       "order": "peça agora"
+    },
+    "hero": {
+      "subtitle": "o luxo sob medida",
+      "title": "transforme suas ideias em <guidelines>móveis extraordinários</guidelines> com a Mognu's",
+      "paragraph": "Somos a Mognu's, uma marcenaria especializada em criar móveis exclusivos sob medida. Para nós, o verdadeiro luxo é ter peças únicas, feitas especialmente para você.",
+      "buttons": {
+        "primary": "fale conosco",
+        "secundary": "Ver projetos"
+      }
     }
   },
   "SwitchLang": {
