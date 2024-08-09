@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { locales } from "@/i18n-config";
 import "../globals.css";
 import NavBar from "@/components/header/NavBar";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
