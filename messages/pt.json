@@ -36,6 +36,36 @@
         "first": "ver mais",
         "second": "+10 anos de experiência"
       }
+    },
+    "service": {
+      "title": "O que fazemos?",
+      "subtitle": "Serviços",
+      "cards": {
+        "1": {
+          "title": "Cozinhas elegantes",
+          "text": "Na Mognu's, criamos cozinhas elegantes e confortáveis, adaptadas ao seu espaço e estilo."
+        },
+        "2": {
+          "title": "Closets espaçosos",
+          "text": "Nossos closets são espaçosos e feitos sob medida para organizar seu espaço com estilo."
+        },
+        "3": {
+          "title": "Prateleiras funcionais",
+          "text": "Desenvolvemos prateleiras funcionais que se adaptam perfeitamente ao seu ambiente."
+        },
+        "4": {
+          "title": "Atendimento personalizado",
+          "text": "Levamos o tempo necessário para entender suas necessidades e integrar cada detalhe no projeto."
+        },
+        "5": {
+          "title": "Orientação especializada",
+          "text": "Nossa equipe oferece orientações e sugestões criativas para tornar seus móveis ainda mais especiais."
+        },
+        "6": {
+          "title": "Compromisso com a qualidade",
+          "text": "Com um compromisso inabalável com a qualidade, transformamos sua visão em realidade."
+        }
+      }
     }
   },
   "SwitchLang": {

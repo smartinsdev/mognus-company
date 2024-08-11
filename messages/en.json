@@ -36,6 +36,36 @@
         "first": "see more",
         "second": "+10 years experience"
       }
+    },
+    "service": {
+      "title": "What We do?",
+      "subtitle": "Services",
+      "cards": {
+        "1": {
+          "title": "Elegant kitchens",
+          "text": "At Mognu's, we create elegant and comfortable kitchens, adapted to your space and style. Each kitchen is designed with attention to detail and functionality, using the best raw materials."
+        },
+        "2": {
+          "title": "Spacious closets",
+          "text": "Our closets are spacious and tailor-made to organize your space in style. We guarantee a design that optimizes the use of space, meeting your specific needs."
+        },
+        "3": {
+          "title": "Functional shelves",
+          "text": "We develop functional shelving that adapts perfectly to your environment. Our shelving units combine sophisticated design with practicality, offering elegant storage solutions."
+        },
+        "4": {
+          "title": "Personalized service",
+          "text": "We understand that each client is unique, as are their needs and preferences. That's why we take the time to listen to and understand their ideas, ensuring that every detail is incorporated into the final project."
+        },
+        "5": {
+          "title": "Expert guidance",
+          "text": "Our team is on hand to offer expert advice and creative suggestions. We work together to make your furniture even more special, exceeding your expectations."
+        },
+        "6": {
+          "title": "Commitment to quality",
+          "text": "With an unwavering commitment to quality and precision, we turn your vision into reality. Each piece we create is carefully crafted using the best carpentry techniques."
+        }
+      }
     }
   },
   "SwitchLang": {

@@ -11,7 +11,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-24 min-h-dvh max-w-[1440px] px-8 mx-auto items-center lg:items-start flex flex-col lg:flex-row-reverse gap-6"
+      className="pb-24 pt-32 min-h-dvh max-w-[1440px] px-8 mx-auto items-center lg:items-start flex flex-col lg:flex-row-reverse gap-6"
     >
       <div className="flex flex-col pt-8 items-center md:items-start lg:pt-12 gap-4">
         <span className="uppercase tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">

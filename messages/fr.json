@@ -36,6 +36,36 @@
         "first": "voir plus",
         "second": "+10 ans d'expérience"
       }
+    },
+    "service": {
+      "title": "que faisons-nous?",
+      "subtitle": "Services",
+      "cards": {
+        "1": {
+          "title": "Cuisines élégantes",
+          "text": "Chez Mognu's, nous créons des cuisines élégantes et confortables, adaptées à votre espace et à votre style."
+        },
+        "2": {
+          "title": "Placards spacieux",
+          "text": "Nos placards sont spacieux et conçus sur mesure pour organiser votre espace avec style."
+        },
+        "3": {
+          "title": "Étagères fonctionnelles",
+          "text": "Nous concevons des étagères fonctionnelles qui s'adaptent parfaitement à votre environnement."
+        },
+        "4": {
+          "title": "Service personnalisé",
+          "text": "Nous prenons le temps de comprendre vos besoins pour intégrer chaque détail dans le projet final."
+        },
+        "5": {
+          "title": "Conseils d'experts",
+          "text": "Notre équipe vous offre des conseils d'experts pour rendre vos meubles encore plus spéciaux."
+        },
+        "6": {
+          "title": "Engagement qualité",
+          "text": "Avec un engagement inébranlable envers la qualité, nous transformons votre vision en réalité."
+        }
+      }
     }
   },
   "SwitchLang": {
