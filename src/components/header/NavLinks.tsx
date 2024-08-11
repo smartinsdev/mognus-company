@@ -39,25 +39,25 @@ export function NavLinks({ t }: PropsNavLink) {
       </Link>
       <Link
         className="px-2 capitalize py-2 text-sm   relative after:absolute after:w-0 after:h-1 after:bg-primary after:bottom-0 after:left-0 after:transition-all hover:after:w-full"
-        href={"/#home"}
+        href={"/#about"}
       >
         {t("nav.about")}
       </Link>
       <Link
         className="px-2 capitalize py-2 text-sm  relative after:absolute after:w-0 after:h-1 after:bg-primary after:bottom-0 after:left-0 after:transition-all hover:after:w-full"
-        href={"/#home"}
+        href={"/#service"}
       >
         {t("nav.service")}
       </Link>
       <Link
         className="px-2 capitalize py-2 text-sm  relative after:absolute after:w-0 after:h-1 after:bg-primary after:bottom-0 after:left-0 after:transition-all hover:after:w-full"
-        href={"/#home"}
+        href={"/#project"}
       >
         {t("nav.project")}
       </Link>
       <Link
         className="px-2 capitalize py-2 text-sm relative after:absolute after:w-0 after:h-1 after:bg-primary after:bottom-0 after:left-0 after:transition-all hover:after:w-full"
-        href={"/#home"}
+        href={"/#contact"}
       >
         {t("nav.contact")}
       </Link>

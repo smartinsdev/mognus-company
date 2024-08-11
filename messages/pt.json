@@ -10,11 +10,31 @@
     },
     "hero": {
       "subtitle": "o luxo sob medida",
-      "title": "transforme suas ideias em <guidelines>móveis extraordinários</guidelines> com a Mognu's",
+      "title": "transforme suas ideias em móveis extraordinários com a Mognu's",
       "paragraph": "Somos a Mognu's, uma marcenaria especializada em criar móveis exclusivos sob medida. Para nós, o verdadeiro luxo é ter peças únicas, feitas especialmente para você.",
       "buttons": {
         "primary": "fale conosco",
         "secundary": "Ver projetos"
+      }
+    },
+    "about": {
+      "subtitle": "sobre nós",
+      "title": "razões para escolher",
+      "paragraphs": {
+        "first": "Temos um compromisso inabalável com a qualidade e a precisão. Nossa equipe de talentosos marceneiros possui anos de experiência e habilidades excepcionais, garantindo que cada peça seja cuidadosamente fabricada com as melhores matérias-primas e técnicas de marcenaria.",
+        "second": "Reservamos tempo para ouvir e entender suas ideias, assegurando que cada detalhe seja incorporado no projeto final. Nossa equipe está à disposição para oferecer orientações especializadas e sugestões criativas para tornar seus móveis ainda mais especiais."
+      },
+      "lists": {
+        "1": "Horários flexíveis",
+        "2": "habilidades únicas",
+        "3": "Trabalho perfeito",
+        "4": "Anos de experiência",
+        "5": "Prioridade ao cliente",
+        "6": "Técnicas variadas"
+      },
+      "buttontext": {
+        "first": "ver mais",
+        "second": "+10 anos de experiência"
       }
     }
   },

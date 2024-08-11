@@ -43,10 +43,14 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang={locale}
+      className="scroll-smooth focus-within:scroll-smooth"
+      suppressHydrationWarning
+    >
       <body
         className={cn(
-          "bg-background text-foreground antialiased font-montserrat min-h-screen",
+          "bg-background text-foreground antialiased font-montserrat min-h-screen scroll-smooth",
           montserrat.variable,
           poppins.variable
         )}

@@ -10,11 +10,31 @@
     },
     "hero": {
       "subtitle": "le luxe sur mesure",
-      "title": "transformez vos idées en <guidelines>meubles extraordinaires</guidelines> avec Mognu's",
+      "title": "transformez vos idées en meubles extraordinaires avec Mognu's",
       "paragraph": "Nous sommes Mognu's, une entreprise de menuiserie spécialisée dans la création de meubles sur mesure. Pour nous, le vrai luxe réside dans le mobilier unique, fabriqué sur mesure pour chaque client.",
       "buttons": {
         "primary": "Obtenir un devis",
         "secundary": "Voir nos projets"
+      }
+    },
+    "about": {
+      "subtitle": "à propos",
+      "title": "raisons de choisir",
+      "paragraphs": {
+        "first": "Nous avons un engagement inébranlable envers la qualité et la précision. Notre équipe de menuisiers talentueux possède des années d'expérience et des compétences exceptionnelles, garantissant que chaque pièce est soigneusement fabriquée avec les meilleures matières premières et techniques de menuiserie.",
+        "second": "Nous prenons le temps d'écouter et de comprendre vos idées, en veillant à ce que chaque détail soit intégré dans le projet final. Notre équipe est à votre disposition pour offrir des conseils d'experts et des suggestions créatives pour rendre vos meubles encore plus spéciaux."
+      },
+      "lists": {
+        "1": "Horaires flexibles",
+        "2": "Expertise inégalées",
+        "3": "Travail parfait",
+        "4": "Années d'expérience",
+        "5": "Priorité au client",
+        "6": "Techniques variées"
+      },
+      "buttontext": {
+        "first": "voir plus",
+        "second": "+10 ans d'expérience"
       }
     }
   },
