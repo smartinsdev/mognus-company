@@ -18,7 +18,7 @@ export function Service() {
       id="service"
       className="pb-24 pt-32 min-h-dvh bg-muted text-muted-foreground relative"
     >
-      <div
+      {/* <div
         className="absolute top-0 left-0 -mt-20 w-full sm:-mt-32 
        lg:-mt-44 xl:-mt-48 xl:-top-10 2xl:-mt-64"
       >
@@ -29,7 +29,7 @@ export function Service() {
             d="M0,192L80,202.7C160,213,320,235,480,229.3C640,224,800,192,960,170.7C1120,149,1280,139,1360,133.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
         </svg>
-      </div>
+      </div> */}
       <div className="flex  flex-col px-8 max-w-[1440px] mx-auto text-foreground">
         <div className="flex flex-col items-center gap-4">
           <span className="uppercase tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">

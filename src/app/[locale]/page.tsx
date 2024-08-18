@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { locales } from "@/i18n-config";
 import { About } from "@/components/sections/About";
 import { Service } from "@/components/sections/Service";
+import { Project } from "@/components/sections/Project";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -20,6 +21,7 @@ export default function Home({
       <Hero />
       <About />
       <Service />
+      <Project />
     </main>
   );
 }
