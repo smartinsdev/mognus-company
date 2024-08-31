@@ -100,7 +100,7 @@ export function ProjectSlider() {
             variant="ghost"
             size="icon"
             className={cn(
-              "w-3 h-3 rounded-full bg-muted transition-all",
+              "w-3 h-3 rounded-full bg-muted transition-all hover:bg-primary",
               current === index && "bg-primary h-4 w-4"
             )}
             onClick={() => api?.scrollTo(index)}
