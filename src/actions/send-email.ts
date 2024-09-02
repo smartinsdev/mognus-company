@@ -2,7 +2,6 @@
 
 import { FormSchemaType } from "@/lib/contact-schema";
 import { send } from "@/lib/nodemailer";
-import { useTranslations } from "next-intl";
 
 export async function sendEmail(values: FormSchemaType) {
   try {
