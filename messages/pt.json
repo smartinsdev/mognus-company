@@ -66,6 +66,41 @@
           "text": "Com um compromisso inabalável com a qualidade, transformamos sua visão em realidade."
         }
       }
+    },
+    "contact": {
+      "title": "entre em contato",
+      "subtitle": "contate-nos",
+      "form": {
+        "name": {
+          "label": "Nome"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "seu@email.com"
+        },
+        "phone": {
+          "label": "Número de Telefone"
+        },
+        "subject": {
+          "label": "Assunto",
+          "placeholder": "Assunto da sua mensagem"
+        },
+        "body": {
+          "label": "Mensagem",
+          "placeholder": "Digite sua mensagem"
+        },
+        "submit": "Enviar"
+      },
+      "messages": {
+        "success": {
+          "title": "Obrigado pela sua mensagem",
+          "description": "Seu e-mail foi enviado com sucesso. Entraremos em contato em breve."
+        },
+        "error": {
+          "title": "Desculpe",
+          "description": "Não conseguimos enviar sua mensagem. Por favor, tente novamente ou use outro método de contato."
+        }
+      }
     }
   },
   "SwitchLang": {

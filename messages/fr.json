@@ -66,6 +66,41 @@
           "text": "Avec un engagement inébranlable envers la qualité, nous transformons votre vision en réalité."
         }
       }
+    },
+    "contact": {
+      "title": "contactez-nous",
+      "subtitle": "nous contacter",
+      "form": {
+        "name": {
+          "label": "Nom"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "votre@email.com"
+        },
+        "phone": {
+          "label": "Numéro de téléphone"
+        },
+        "subject": {
+          "label": "Objet",
+          "placeholder": "Objet de votre message"
+        },
+        "body": {
+          "label": "Message",
+          "placeholder": "Entrez votre message"
+        },
+        "submit": "Envoyer"
+      },
+      "messages": {
+        "success": {
+          "title": "Merci pour votre message",
+          "description": "Votre e-mail a été envoyé avec succès. Nous vous contacterons sous peu."
+        },
+        "error": {
+          "title": "Désolé!",
+          "description": "Nous n'avons pas pu envoyer votre message. Veuillez réessayer ou utiliser un autre moyen de contact."
+        }
+      }
     }
   },
   "SwitchLang": {

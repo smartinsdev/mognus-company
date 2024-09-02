@@ -66,6 +66,41 @@
           "text": "With an unwavering commitment to quality and precision, we turn your vision into reality. Each piece we create is carefully crafted using the best carpentry techniques."
         }
       }
+    },
+    "contact": {
+      "title": "get in touch",
+      "subtitle": "contact us",
+      "form": {
+        "name": {
+          "label": "Name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your@email.com"
+        },
+        "phone": {
+          "label": "Phone Number"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Subject of your message"
+        },
+        "body": {
+          "label": "Message",
+          "placeholder": "Enter your message"
+        },
+        "submit": "Submit"
+      },
+      "messages": {
+        "success": {
+          "title": "Thank you for your message",
+          "description": "Your e-mail was sent successfully. We will contact you shortly."
+        },
+        "error": {
+          "title": "Sorry, we couldn't send your message",
+          "description": "We were unable to send your message. Please try again or use another contact method."
+        }
+      }
     }
   },
   "SwitchLang": {

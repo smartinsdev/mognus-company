@@ -5,6 +5,7 @@ import { locales } from "@/i18n-config";
 import { About } from "@/components/sections/About";
 import { Service } from "@/components/sections/Service";
 import { Project } from "@/components/sections/Project";
+import { Contact } from "@/components/sections/Contact";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -22,6 +23,7 @@ export default function Home({
       <About />
       <Service />
       <Project />
+      <Contact />
     </main>
   );
 }
