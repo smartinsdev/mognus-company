@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { z } from "zod";
+
 import { FormSchemaType } from "./contact-schema";
 
 const transporter = nodemailer.createTransport({
@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 export async function send(sender: FormSchemaType) {
   const response = await transporter.sendMail({
     from: process.env.NODEMAILER_SENDER!,
-    to: process.env.NODEMAILER_RECIPIENT,
+    to: process.env.NODEMAILER_RECIPIENT!,
     subject: sender.subject,
     text: `Name: ${sender.name}\nphone: ${sender.phone}\nemail: ${sender.email}\n\n${sender.body}`,
   });
