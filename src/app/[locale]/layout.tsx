@@ -65,7 +65,7 @@ export default async function RootLayout({
           >
             <NavBar />
             {children}
-            <Toaster position="top-center" />
+            <Toaster position="bottom-center" />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
