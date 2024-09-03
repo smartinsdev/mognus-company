@@ -4,7 +4,6 @@ import { useTransition } from "react";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 
 import { Button } from "../ui/button";
 import {
@@ -20,8 +19,9 @@ import { Card, CardContent } from "../ui/card";
 import { Textarea } from "../ui/textarea";
 import { FormSchema, FormSchemaType } from "@/lib/contact-schema";
 import { sendEmail } from "@/actions/send-email";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import { MdError } from "react-icons/md";
 
 export function Contact() {
   const form = useForm<FormSchemaType>({
@@ -36,23 +36,37 @@ export function Contact() {
   });
 
   const [isPending, startTransition] = useTransition();
-  const { toast } = useToast();
   const t = useTranslations("Index.contact");
 
   function onSubmit(data: FormSchemaType) {
     startTransition(async () => {
       const response = await sendEmail(data);
       if (!response?.accepted) {
-        toast({
-          title: t("messages.error.title"),
-          description: t("messages.error.description"),
-          variant: "destructive",
+        toast.error(t("messages.error.title"), {
+          description: (
+            <div className="text-red-200">
+              {t("messages.error.description")}
+            </div>
+          ),
+          style: {
+            background: "#9C1A15",
+            color: "#F5F5F5",
+            fontSize: "0.875rem",
+          },
         });
         return;
       }
-      toast({
-        title: t("messages.success.title"),
-        description: t("messages.success.description"),
+      toast.success(t("messages.success.title"), {
+        description: (
+          <div className="text-emerald-200">
+            {t("messages.success.description")}
+          </div>
+        ),
+        style: {
+          background: "#22AB74",
+          color: "#F5F5F5",
+          fontSize: "0.875rem",
+        },
       });
     });
     form.reset();

@@ -9,7 +9,7 @@ import { locales } from "@/i18n-config";
 import "../globals.css";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -65,7 +65,7 @@ export default async function RootLayout({
           >
             <NavBar />
             {children}
-            <Toaster />
+            <Toaster position="top-center" />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
