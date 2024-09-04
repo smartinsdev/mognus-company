@@ -10,6 +10,7 @@ import "../globals.css";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
+import { Footer } from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -65,6 +66,7 @@ export default async function RootLayout({
           >
             <NavBar />
             {children}
+            <Footer />
             <Toaster position="bottom-center" />
           </ThemeProvider>
         </NextIntlClientProvider>
