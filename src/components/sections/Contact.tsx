@@ -1,6 +1,7 @@
 "use client";
 
 import { useTransition } from "react";
+import Image from "next/image";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +22,9 @@ import { FormSchema, FormSchemaType } from "@/lib/contact-schema";
 import { sendEmail } from "@/actions/send-email";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
-import { MdError } from "react-icons/md";
+
+import pt from "@/assets/pt.png";
+import fr from "@/assets/fr.png";
 
 export function Contact() {
   const form = useForm<FormSchemaType>({
@@ -83,100 +86,134 @@ export function Contact() {
             {t("title")}
           </h2>
         </div>
-        <Card className="w-full max-w-4xl mx-auto">
-          <CardContent className="p-4">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="grid  sm:grid-cols-2 gap-4"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("form.name.label")}</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Ana Maria" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("form.email.label")}</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder={t("form.email.placeholder")}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("form.phone.label")}</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+1234567890" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("form.subject.label")}</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder={t("form.subject.placeholder")}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="body"
-                  render={({ field }) => (
-                    <FormItem className="sm:col-span-2">
-                      <FormLabel>{t("form.body.label")}</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder={t("form.body.placeholder")}
-                          {...field}
-                          className="min-h-20 sm:min-h-40"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button
-                  disabled={isPending}
-                  type="submit"
-                  size={"lg"}
-                  className="md:justify-self-start sm:col-span-2"
+        <div className="grid grid-cols-1 gap-8 md:gap-0 md:grid-cols-2 ">
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col gap-6 items-start">
+              <div className="flex flex-col">
+                <h3 className="text-2xl md:text-3xl font-montserrat font-semibold ">
+                  Jardel Freitas
+                </h3>
+                <span className="text-xs text-muted-foreground">
+                  CEO & Master Carpenter
+                </span>
+              </div>
+              <div className="flex flex-col items-start">
+                <div className="flex items-center justify-center gap-2">
+                  <Image
+                    src={pt}
+                    alt="image represents the flag of portugal"
+                    className="w-5"
+                  />
+
+                  <p className="text-sm md:text-lg">+351 930 636 700</p>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Image
+                    src={fr}
+                    alt="image represents the flag of France"
+                    className="w-5"
+                  />
+
+                  <p className="text-sm md:text-lg">+33 06 46 04 14 75</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Card className="w-full max-w-4xl mx-auto">
+            <CardContent className="p-4">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="grid  sm:grid-cols-2 gap-4"
                 >
-                  {t("form.submit")}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("form.name.label")}</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ana Maria" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("form.email.label")}</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder={t("form.email.placeholder")}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("form.phone.label")}</FormLabel>
+                        <FormControl>
+                          <Input placeholder="+1234567890" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("form.subject.label")}</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder={t("form.subject.placeholder")}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="body"
+                    render={({ field }) => (
+                      <FormItem className="sm:col-span-2">
+                        <FormLabel>{t("form.body.label")}</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder={t("form.body.placeholder")}
+                            {...field}
+                            className="min-h-20 sm:min-h-40"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    disabled={isPending}
+                    type="submit"
+                    size={"lg"}
+                    className="md:justify-self-start sm:col-span-2"
+                  >
+                    {t("form.submit")}
+                  </Button>
+                </form>
+              </Form>
+            </CardContent>
+          </Card>
+        </div>
       </div>
       <div className="overflow-hidden relative -bottom-0.5 w-full h-fit">
         <svg
