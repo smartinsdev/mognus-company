@@ -47,19 +47,19 @@ export function Footer() {
         <div className="flex flex-col gap-2">
           <h2 className="text-neutral-100 text-lg">Legal</h2>
           <Link
-            href="#about"
+            href="/terms-of-services"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Terms of Service
           </Link>
           <Link
-            href="#service"
+            href="/privacy-policy"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Privacy Policy
           </Link>
           <Link
-            href="#project"
+            href="/cookies-policy"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Cookie Policy

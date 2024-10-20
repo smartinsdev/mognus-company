@@ -103,6 +103,96 @@
       }
     }
   },
+  "terms": {
+    "cookies": {
+      "title": "Politique de Cookies",
+      "sub1": "Utilisation des Cookies",
+      "p1": "Le site utilise des cookies pour personnaliser votre expérience en ligne. En accédant à www.mognuscompany.com, vous avez accepté d'utiliser les cookies nécessaires.",
+      "sub2": "Définition d'un Cookie",
+      "p2": "Un cookie est un fichier texte placé sur votre disque dur par un serveur de pages Web. Les cookies ne peuvent pas être utilisés pour exécuter des programmes ou transmettre des virus à votre ordinateur.",
+      "sub3": "Objectif des Cookies",
+      "p3": "Nous pouvons utiliser des cookies pour collecter, stocker et suivre des informations à des fins statistiques ou de marketing afin de faire fonctionner notre site.",
+      "sub4": "Acceptation ou Refus des Cookies",
+      "p4": "Vous avez la possibilité d'accepter ou de refuser les cookies facultatifs. Certains cookies sont nécessaires au fonctionnement de notre site.",
+      "sub5": "Cookies de Tiers",
+      "p5": "N'oubliez pas qu'en acceptant les cookies nécessaires, vous acceptez également les cookies tiers, qui peuvent être utilisés par le biais de services fournis par des tiers."
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "p1": "Le site www.mognuscompany.com est la propriété de Mognu's, qui est le contrôleur de vos données personnelles.",
+      "p2": "Nous avons adopté cette politique de confidentialité, qui détermine la manière dont nous traitons les informations collectées par www.mognuscompany.com.",
+      "p3": "Nous prenons soin de vos données personnelles et nous nous engageons à garantir leur confidentialité et leur sécurité.",
+      "sub1": "Informations Personnelles Collectées",
+      "p4": "Lorsque vous visitez www.mognuscompany.com, nous collectons automatiquement certaines informations concernant votre appareil, notamment des informations sur votre navigateur, votre adresse IP, votre fuseau horaire, et certains des cookies installés sur votre appareil.",
+      "p5": "Nous pouvons collecter les données personnelles que vous nous fournissez lors de l'inscription pour pouvoir respecter l'accord.",
+      "sub2": "Motif du Traitement des Données",
+      "p6": "Notre principale priorité est la sécurité des données client et, en tant que tel, nous pouvons traiter uniquement les données minimales de l'utilisateur, seulement ce qui est absolument nécessaire pour maintenir le site.",
+      "sub3": "Droits de l'Utilisateur",
+      "p7": "Si vous êtes un résident européen, vous avez les droits suivants concernant vos données personnelles :",
+      "list1": {
+        "item1": "Le droit d'être informé.",
+        "item2": "Le droit d'accès.",
+        "item3": "Le droit de rectification.",
+        "item4": "Le droit à l'effacement.",
+        "item5": "Le droit de restreindre le traitement.",
+        "item6": "Le droit à la portabilité des données.",
+        "item7": "Le droit de s'opposer.",
+        "item8": "Droits relatifs à la prise de décision automatisée et au profilage."
+      },
+      "sub4": "Liens vers d'Autres Sites Web",
+      "p8": "Notre site peut contenir des liens vers d'autres sites qui ne sont ni la propriété ni sous le contrôle de notre part.",
+      "sub5": "Sécurité de l'Information",
+      "p9": "Nous protégeons les informations que vous nous fournissez sur des serveurs informatiques dans un environnement contrôlé et sécurisé, protégé contre l'accès, l'utilisation ou la divulgation non autorisés.",
+      "sub6": "Divulgation Légale",
+      "p10": "Nous divulguerons toute information que nous collectons, utilisons ou recevons si cela est requis ou permis par la loi.",
+      "sub7": "Informations de Contact",
+      "p11": "Si vous souhaitez nous contacter pour en savoir plus sur cette politique ou pour discuter de toute question relative aux droits individuels et à vos informations personnelles, vous pouvez envoyer un e-mail à geral@mognuscompany.com."
+    },
+    "services": {
+      "title": "Termes et Conditions",
+      "p1": "Bienvenue sur www.mognuscompany.com ! Ces termes et conditions décrivent les règles et règlements pour l'utilisation du site de Mognu's, situé à www.mognuscompany.com.",
+      "p2": "En accédant à ce site, nous supposons que vous acceptez ces termes et conditions. Ne continuez pas à utiliser www.mognuscompany.com si vous n'acceptez pas tous les termes et conditions indiqués sur cette page.",
+      "sub1": "Licence",
+      "p3": "Sauf indication contraire, Mognu's et/ou ses concédants détiennent les droits de propriété intellectuelle de tout le matériel sur www.mognuscompany.com. Tous les droits de propriété intellectuelle sont réservés. Vous pouvez accéder à www.mognuscompany.com pour votre usage personnel, sous réserve des restrictions définies dans ces termes et conditions.",
+      "list1": {
+        "item1": "Vous ne devez pas copier ou republier le matériel de www.mognuscompany.com.",
+        "item2": "Vous ne devez pas vendre, louer ou sous-licencier le matériel de www.mognuscompany.com.",
+        "item3": "Vous ne devez pas reproduire, dupliquer ou copier le matériel de www.mognuscompany.com.",
+        "item4": "Vous ne devez pas redistribuer le contenu de www.mognuscompany.com."
+      },
+      "sub2": "Commentaires et Responsabilité",
+      "p4": "Des parties de ce site offrent aux utilisateurs la possibilité de publier et d'échanger des opinions et des informations dans certaines zones du site. Mognu's ne filtre pas, n'édite pas, ne publie pas et n'examine pas les commentaires sur le site.",
+      "p5": "Vous garantissez et déclarez que :",
+      "list2": {
+        "item1": "Vous avez le droit de publier des commentaires sur notre site et vous disposez de toutes les licences et consentements nécessaires pour le faire.",
+        "item2": "The comments do not infringe upon any intellectual property rights, including, without limitation, third-party copyrights, patents, or trademarks.",
+        "item3": "Les commentaires ne contiennent aucun matériel diffamatoire, calomnieux, offensant, indécent ou autrement illégal, ce qui constitue une atteinte à la vie privée."
+      },
+      "sub3": "Hyperliens vers Notre Contenu",
+      "p6": "Les organisations suivantes peuvent se lier à notre site sans approbation écrite préalable :",
+      "list3": {
+        "item1": "Les agences gouvernementales",
+        "item2": "Les moteurs de recherche",
+        "item3": "Les organisations de presse",
+        "item4": "Les distributeurs d'annuaires en ligne",
+        "item5": "Les entreprises accréditées dans tout le système, à l'exception des sollicitations des organisations à but non lucratif, des centres commerciaux de bienfaisance et des groupes de collecte de fonds pour des œuvres de charité."
+      },
+      "sub4": "Responsabilité du Contenu",
+      "p7": "Nous ne serons pas tenus responsables de tout contenu apparaissant sur votre site. Vous acceptez de nous protéger et de nous défendre contre toutes les réclamations soulevées sur votre site.",
+      "sub5": "Réserve de Droits",
+      "p8": "Nous nous réservons le droit de demander la suppression de tous les liens ou de tout lien spécifique vers notre site. Vous approuvez la suppression immédiate de tous les liens vers notre site sur demande. Nous nous réservons également le droit de modifier ces termes et conditions ainsi que sa politique de liaison à tout moment.",
+      "sub6": "Suppression des Liens",
+      "p9": "Si vous trouvez un lien sur notre site qui est offensant pour une raison quelconque, vous pouvez nous contacter et nous en informer à tout moment.",
+      "sub7": "Clause de Non-Responsabilité",
+      "p10": "Dans la mesure maximale permise par la loi applicable, nous excluons toutes les représentations, garanties et conditions relatives à notre site et à l'utilisation de ce site.",
+      "list4": {
+        "item1": "Limiter ou exclure notre responsabilité en cas de décès ou de dommages corporels.",
+        "item2": "Limiter ou exclure notre responsabilité ou votre responsabilité en cas de fraude ou de fausse déclaration frauduleuse.",
+        "item3": "Limiter l'une de nos responsabilités ou de vos responsabilités d'une manière qui n'est pas permise par la loi applicable.",
+        "item4": "Exclure l'une de nos responsabilités ou de vos responsabilités qui ne peuvent être exclues en vertu de la loi applicable."
+      }
+    }
+  },
   "SwitchLang": {
     "title": "choisir la langue",
     "en": "anglais",

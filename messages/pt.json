@@ -103,6 +103,96 @@
       }
     }
   },
+  "terms": {
+    "cookies": {
+      "title": "Política de Cookies",
+      "sub1": "Uso de Cookies",
+      "p1": "O site usa cookies para ajudar a personalizar a sua experiência online. Ao aceder www.mognuscompany.com, concordou em usar os cookies necessários.",
+      "sub2": "Definição de Cookie",
+      "p2": "Um cookie é um arquivo de texto colocado no seu disco rígido por um servidor de páginas web. Os cookies não podem ser usados para executar programas ou enviar vírus para o seu computador.",
+      "sub3": "Finalidade dos Cookies",
+      "p3": "Podemos usar cookies para recolher, armazenar e rastrear informações para fins estatísticos ou de marketing para operar o nosso site.",
+      "sub4": "Aceitação ou Recusa de Cookies",
+      "p4": "Tem a opção de aceitar ou recusar Cookies opcionais. Existem alguns Cookies necessários para o funcionamento do nosso site.",
+      "sub5": "Cookies de Terceiros",
+      "p5": "Lembre-se de que, ao aceitar os cookies necessários, também aceita cookies de terceiros, que podem ser usados por meio de serviços fornecidos por terceiros."
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "p1": "O site de <b>www.mognuscompany.com</b> é propriedade de Mognu&apos;s, que é uma controladora dos seus dados pessoais.",
+      "p2": "Nós adotamos esta Política de Privacidade, que determina como processamos as informações recolhidas por <b>www.mognuscompany.com</b>",
+      "p3": "Cuidamos dos seus dados pessoais e comprometemo-nos a garantir a sua confidencialidade e segurança.",
+      "sub1": "Informações Pessoais Coletadas",
+      "p4": "Quando visita www.mognuscompany.com, recolhemos automaticamente certas informações sobre o seu dispositivo, incluindo informações sobre o seu browser, endereço IP, fuso horário, e alguns dos cookies instalados no seu dispositivo.",
+      "p5": "Podemos recolher os dados pessoais que nos fornece durante o registo para poder cumprir o acordo.",
+      "sub2": "Motivo do Processamento de Dados",
+      "p6": "A nossa principal prioridade é a segurança dos dados do cliente e, como tal, podemos processar apenas dados mínimos do utilizador, apenas o que for absolutamente necessário para manter o site.",
+      "sub3": "Direitos do Usuário",
+      "p7": "Se é um residente europeu, tem os seguintes direitos relacionados aos seus dados pessoais:",
+      "list1": {
+        "item1": "O direito de ser informado.",
+        "item2": "O direito de acesso.",
+        "item3": "O direito à retificação.",
+        "item4": "O direito de apagar.",
+        "item5": "O direito de restringir o processamento.",
+        "item6": "O direito à portabilidade de dados.",
+        "item7": "O direito de se opor.",
+        "item8": "Direitos em relação à tomada de decisão automatizada e definição de perfis."
+      },
+      "sub4": "Links para Outros Sites",
+      "p8": "O nosso site pode conter links para outros sites que não são de nossa propriedade ou controlados por nós.",
+      "sub5": "Segurança da Informação",
+      "p9": "Protegemos as informações que nos fornece nos servidores de computador num ambiente controlado e seguro, protegido contra acesso, uso ou divulgação não autorizados.",
+      "sub6": "Divulgação Legal",
+      "p10": "Divulgaremos todas as informações que recolhermos, usarmos ou recebermos se exigido ou permitido por lei.",
+      "sub7": "Informações de Contato",
+      "p11": "Se desejar entrar em contacto conosco para entender mais sobre esta Política ou se quiser falar sobre qualquer assunto relacionado aos direitos individuais e as suas informações pessoais, pode enviar um email para geral@mognuscompany.com."
+    },
+    "services": {
+      "title": "Termos e Condições",
+      "p1": "Bem-vindo a www.mognuscompany.com! Estes termos e condições descrevem as regras e regulamentos para o uso do site de Mognu&apos;s, localizado em www.mognuscompany.com.",
+      "p2": "Ao aceder a este site, presumimos que aceita estes termos e condições. Não continue a usar www.mognuscompany.com se não concordar com todos os termos e condições declarados nesta página.",
+      "sub1": "Licença",
+      "p3": "Salvo indicação em contrário, Mognu&apos;s e/ou os seus licenciados possuem os direitos de propriedade intelectual de todo o material em www.mognuscompany.com. Todos os direitos de propriedade intelectual são reservados. Pode aceder de www.mognuscompany.com para o seu uso pessoal sujeito às restrições definidas nestes termos e condições.",
+      "list1": {
+        "item1": "Não deve copiar ou republicar o material de www.mognuscompany.com.",
+        "item2": "Não deve vender, alugar ou sublicenciar o material de www.mognuscompany.com.",
+        "item3": "Não deve reproduzir, duplicar ou copiar o material de www.mognuscompany.com.",
+        "item4": "Não deve redistribuir o conteúdo de www.mognuscompany.com."
+      },
+      "sub2": "Comentários e Responsabilidade",
+      "p4": "Partes deste site oferecem aos utilizadores a oportunidade de postar e trocar opiniões e informações em certas áreas do site. Mognu&apos;s não filtra, edita, publica ou analisa os comentários no site.",
+      "p5": "Garante e declara que:",
+      "list2": {
+        "item1": "Tem o direito de postar os comentários no nosso site e tem todas as licenças e consentimentos necessários para fazê-lo.",
+        "item2": "Os comentários não invadem nenhum direito de propriedade intelectual, incluindo, sem limitação, direitos de autor, patentes ou marcas comerciais de terceiros.",
+        "item3": "Os comentários não contêm nenhum material difamatório, calunioso, ofensivo, indecente ou de outra forma ilegal, o que constitui uma invasão de privacidade."
+      },
+      "sub3": "Hiperlinks para o Nosso Conteúdo",
+      "p6": "As seguintes organizações podem vincular-se ao nosso site sem aprovação prévia por escrito:",
+      "list3": {
+        "item1": "Agências governamentais",
+        "item2": "Mecanismos de pesquisa",
+        "item3": "Organizações de notícias",
+        "item4": "Distribuidores de diretórios online",
+        "item5": "Negócios credenciados em todo o sistema, exceto a solicitação de organizações sem fins lucrativos, centros de caridade e grupos de angariação de fundos de caridade"
+      },
+      "sub4": "Responsabilidade pelo Conteúdo",
+      "p7": "Não seremos responsabilizados por qualquer conteúdo que apareça no seu site. Concorda em proteger-nos e defender contra todas as reclamações levantadas no seu site.",
+      "sub5": "Reserva de Direitos",
+      "p8": "Reservamos o direito de solicitar que remova todos os links ou qualquer link específico para o nosso site. Aprova a remoção imediata de todos os links para nosso site, mediante solicitação. Também nos reservamos o direito de alterar estes termos e condições e a sua política de vinculação a qualquer momento.",
+      "sub6": "Remoção de Links",
+      "p9": "Se encontrar algum link no nosso site que seja ofensivo por qualquer motivo, pode contactar-nos e informar-nos a qualquer momento.",
+      "sub7": "Isenção de Responsabilidade",
+      "p10": "Na extensão máxima permitida pela lei aplicável, excluímos todas as representações, garantias e condições relacionadas ao nosso site e ao uso deste site.",
+      "list4": {
+        "item1": "Limitará ou excluirá a nossa responsabilidade por morte ou danos pessoais.",
+        "item2": "Limitar ou excluir a nossa responsabilidade ou a sua responsabilidade por fraude ou deturpação fraudulenta.",
+        "item3": "Limitar qualquer uma das nossas responsabilidades de qualquer forma que não seja permitida pela lei aplicável.",
+        "item4": "Excluir qualquer uma das nossas ou suas responsabilidades que não possam ser excluídas sob a lei aplicável."
+      }
+    }
+  },
   "SwitchLang": {
     "title": "Escolha o idioma",
     "en": "inglês",

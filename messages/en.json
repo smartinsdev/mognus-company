@@ -103,6 +103,96 @@
       }
     }
   },
+  "terms": {
+    "cookies": {
+      "title": "Cookie Policy",
+      "sub1": "Use of Cookies",
+      "p1": "The website uses cookies to help personalize your online experience. By accessing www.mognuscompany.com, you agreed to use the necessary cookies.",
+      "sub2": "Definition of a Cookie",
+      "p2": "A cookie is a text file placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer.",
+      "sub3": "Purpose of Cookies",
+      "p3": "We may use cookies to collect, store, and track information for statistical or marketing purposes to operate our website.",
+      "sub4": "Acceptance or Refusal of Cookies",
+      "p4": "You have the option to accept or refuse optional Cookies. Some Cookies are necessary for the operation of our website.",
+      "sub5": "Third-Party Cookies",
+      "p5": "Remember that by accepting necessary cookies, you also accept third-party cookies, which may be used through services provided by third parties."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "p1": "The website www.mognuscompany.com is owned by Mognu's, which is a controller of your personal data.",
+      "p2": "We have adopted this Privacy Policy, which determines how we process information collected by www.mognuscompany.com.",
+      "p3": "We care about your personal data and are committed to ensuring its confidentiality and security.",
+      "sub1": "Personal Information Collected",
+      "p4": "When you visit www.mognuscompany.com, we automatically collect certain information about your device, including information about your browser, IP address, time zone, and some of the cookies installed on your device.",
+      "p5": "We may collect the personal data you provide during registration to fulfill the agreement.",
+      "sub2": "Reason for Data Processing",
+      "p6": "Our top priority is customer data security, and as such, we may process only the minimum user data necessary to maintain the website.",
+      "sub3": "User Rights",
+      "p7": "If you are a European resident, you have the following rights regarding your personal data:",
+      "list1": {
+        "item1": "The right to be informed.",
+        "item2": "The right of access.",
+        "item3": "The right to rectification.",
+        "item4": "The right to erasure.",
+        "item5": "The right to restrict processing.",
+        "item6": "The right to data portability.",
+        "item7": "The right to object.",
+        "item8": "Rights in relation to automated decision-making and profiling."
+      },
+      "sub4": "Links to Other Websites",
+      "p8": "Our website may contain links to other websites that are not owned or controlled by us.",
+      "sub5": "Information Security",
+      "p9": "We protect the information you provide on computer servers in a controlled and secure environment, protected from unauthorized access, use, or disclosure.",
+      "sub6": "Legal Disclosure",
+      "p10": "We will disclose any information we collect, use, or receive if required or permitted by law.",
+      "sub7": "Contact Information",
+      "p11": "If you wish to contact us to understand more about this Policy or regarding any individual rights and your personal information, you may email us at geral@mognuscompany.com."
+    },
+    "services": {
+      "title": "Terms and Conditions",
+      "p1": "Welcome to www.mognuscompany.com! These terms and conditions outline the rules and regulations for the use of Mognu's website, located at www.mognuscompany.com.",
+      "p2": "By accessing this website, we assume you accept these terms and conditions. Do not continue to use www.mognuscompany.com if you do not agree to all the terms and conditions stated on this page.",
+      "sub1": "License",
+      "p3": "Unless otherwise stated, Mognu's and/or its licensors own the intellectual property rights for all material on www.mognuscompany.com. All intellectual property rights are reserved. You may access www.mognuscompany.com for your own personal use subject to restrictions set in these terms and conditions.",
+      "list1": {
+        "item1": "You must not copy or republish material from www.mognuscompany.com.",
+        "item2": "You must not sell, rent, or sub-license material from www.mognuscompany.com.",
+        "item3": "You must not reproduce, duplicate, or copy material from www.mognuscompany.com.",
+        "item4": "You must not redistribute content from www.mognuscompany.com."
+      },
+      "sub2": "Comments and Liability",
+      "p4": "Parts of this website offer users the opportunity to post and exchange opinions and information in certain areas of the website. Mognu's does not filter, edit, publish, or review comments on the website.",
+      "p5": "You warrant and represent that:",
+      "list2": {
+        "item1": "You have the right to post comments on our website and have all necessary licenses and consents to do so.",
+        "item2": "The comments do not infringe upon any intellectual property rights, including, without limitation, third-party copyrights, patents, or trademarks.",
+        "item3": "The comments do not contain any defamatory, libelous, offensive, indecent, or otherwise unlawful material that is an invasion of privacy."
+      },
+      "sub3": "Hyperlinks to Our Content",
+      "p6": "The following organizations may link to our website without prior written approval:",
+      "list3": {
+        "item1": "Government agencies",
+        "item2": "Search engines",
+        "item3": "News organizations",
+        "item4": "Online directory distributors",
+        "item5": "Accredited businesses across the system, except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups."
+      },
+      "sub4": "Content Liability",
+      "p7": "We shall not be held responsible for any content that appears on your website. You agree to protect and defend us against all claims raised on your website.",
+      "sub5": "Reservation of Rights",
+      "p8": "We reserve the right to request that you remove all links or any particular link to our website. You approve the immediate removal of all links to our website upon request. We also reserve the right to amend these terms and conditions and its linking policy at any time.",
+      "sub6": "Removal of Links",
+      "p9": "If you find any link on our website that is offensive for any reason, you are free to contact and inform us at any moment.",
+      "sub7": "Disclaimer",
+      "p10": "To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website.",
+      "list4": {
+        "item1": "Limit or exclude our liability for death or personal injury.",
+        "item2": "Limit or exclude our or your liability for fraud or fraudulent misrepresentation.",
+        "item3": "Limit any of our or your liabilities in any way that is not permitted under applicable law.",
+        "item4": "Exclude any of our or your liabilities that may not be excluded under applicable law."
+      }
+    }
+  },
   "SwitchLang": {
     "title": "choose language",
     "en": "English",
