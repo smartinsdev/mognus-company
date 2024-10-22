@@ -1,0 +1,45 @@
+# robots.txt for Mognu's - Móveis Sob Medida
+
+User-agent: *
+# Allow indexing of all content
+Allow: /
+
+# Block specific directories and files
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+
+# Block indexing of certain file types
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+
+# Sitemap location
+Sitemap: https://www.mognuscompany.com/sitemap.xml
+
+# Additional settings for specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Disallow: /
+
+# Crawl delay for all bots (uncomment if needed)
+# Crawl-delay: 10
+
+# Specific bots with crawl delay
+User-agent: Yandex
+Crawl-delay: 5
+
+User-agent: Baiduspider
+Crawl-delay: 10
+
+# Blocking bad bots (example)
+User-agent: BadBot
+Disallow: /
+
+User-agent: EvilBot
+Disallow: /
