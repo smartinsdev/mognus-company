@@ -84,7 +84,7 @@ export function Footer() {
             <span>
               8/10 Rue de la mare Blanche
               <br />
-              77186 Noisiel
+              77186 Noisiel, France
             </span>
           </div>
           <div className="flex gap-4 text-neutral-200">
