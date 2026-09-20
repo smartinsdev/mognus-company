@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdMailOutline, MdOutlinePinDrop } from "react-icons/md";
 import { Link } from "@/navigation";
@@ -7,67 +8,74 @@ import { Link } from "@/navigation";
 // With plain next/link the section anchors did nothing outside the homepage,
 // and the legal links pointed at unprefixed paths that only resolved because
 // src/proxy.ts redirected them — a wasted round trip on every click.
+//
+// Every label was hardcoded English until now, on a site that otherwise
+// translates into three languages. Most of them needed no new strings: the
+// quick links are the nav's own labels, and the legal links reuse each policy
+// page's `title`, which keeps the link and the heading it leads to from
+// drifting apart.
 export function Footer() {
+  const t = useTranslations("Footer");
+  const nav = useTranslations("Index.nav");
+  const terms = useTranslations("terms");
+
   return (
     <footer className="bg-[#0c0a09] py-12">
       <div className="max-w-360 px-6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:justify-items-center items-start">
         <div className="flex flex-col gap-4 md:col-span-2">
           <h2 className="text-neutral-100 text-2xl">Mognu&apos;s Company</h2>
-          <p className="text-neutral-600 max-w-[50ch]">
-            The company specializes in high-quality carpentry, with a focus on
-            personalization and attention to detail.
-          </p>
+          <p className="text-neutral-600 max-w-[50ch]">{t("tagline")}</p>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-neutral-100 text-lg">Quick Links</h2>
+          <h2 className="text-neutral-100 text-lg">{t("quickLinks")}</h2>
           <Link
             href="/#about"
-            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
+            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4 capitalize"
           >
-            About Us
+            {nav("about")}
           </Link>
           <Link
             href="/#service"
-            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
+            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4 capitalize"
           >
-            Services
+            {nav("service")}
           </Link>
           <Link
             href="/#project"
-            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
+            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4 capitalize"
           >
-            Projects
+            {nav("project")}
           </Link>
           <Link
             href="/#contact"
-            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
+            className="text-sm text-neutral-400 hover:underline hover:underline-offset-4 capitalize"
           >
-            Contact
+            {nav("contact")}
           </Link>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-neutral-100 text-lg">Legal</h2>
+          <h2 className="text-neutral-100 text-lg">{t("legal")}</h2>
           <Link
             href="/terms-of-services"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
-            Terms of Service
+            {terms("services.title")}
           </Link>
           <Link
             href="/privacy-policy"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
-            Privacy Policy
+            {terms("privacy.title")}
           </Link>
           <Link
             href="/cookies-policy"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
-            Cookie Policy
+            {terms("cookies.title")}
           </Link>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-neutral-100 text-lg capitalize">Info</h2>
+          <h2 className="text-neutral-100 text-lg capitalize">{t("info")}</h2>
           <div className="flex items-center text-sm text-neutral-400 gap-2 mb-1">
             <MdMailOutline size={18} />
             <span>suport@mongnus.com</span>
@@ -112,7 +120,16 @@ export function Footer() {
         </div>
       </div>
       <div className="mt-8 border-t border-t-neutral-900 pt-4 text-center text-xs text-muted-foreground">
-        <p>&copy; 2024 Mognu&apos;s Company. All rights reserved.</p>
+        {/* The year was written as a literal 2024 and had been wrong for two
+            years. Every page here is prerendered, so this resolves at build
+            time rather than per request: it is right as of the last deploy and
+            goes stale each January until the next one. That is a much smaller
+            window than "whenever someone notices", and the alternative — a
+            client-side Date — would render a different year on the server than
+            in the browser and trip hydration. */}
+        <p>
+          &copy; {new Date().getFullYear()} Mognu&apos;s Company. {t("rights")}
+        </p>
       </div>
     </footer>
   );

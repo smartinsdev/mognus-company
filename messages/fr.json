@@ -117,6 +117,10 @@
           "description": "Nous n'avons pas pu envoyer votre message. Veuillez réessayer ou utiliser un autre moyen de contact."
         }
       }
+    },
+    "project": {
+      "subtitle": "réalisations",
+      "title": "des projets qui vous plairont"
     }
   },
   "terms": {
@@ -214,5 +218,12 @@
     "en": "anglais",
     "fr": "Français",
     "pt": "Portugais"
+  },
+  "Footer": {
+    "tagline": "L’entreprise est spécialisée dans la menuiserie haut de gamme, avec un souci constant de personnalisation et du détail.",
+    "quickLinks": "Liens rapides",
+    "legal": "Mentions légales",
+    "info": "Infos",
+    "rights": "Tous droits réservés."
   }
 }

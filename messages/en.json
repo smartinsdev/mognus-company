@@ -117,6 +117,10 @@
           "description": "We were unable to send your message. Please try again or use another contact method."
         }
       }
+    },
+    "project": {
+      "subtitle": "featured works",
+      "title": "projects you may love"
     }
   },
   "terms": {
@@ -214,5 +218,12 @@
     "en": "English",
     "fr": "French",
     "pt": "Portuguese"
+  },
+  "Footer": {
+    "tagline": "The company specializes in high-quality carpentry, with a focus on personalization and attention to detail.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "info": "Info",
+    "rights": "All rights reserved."
   }
 }

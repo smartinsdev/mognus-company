@@ -117,6 +117,10 @@
           "description": "Não conseguimos enviar sua mensagem. Por favor, tente novamente ou use outro método de contato."
         }
       }
+    },
+    "project": {
+      "subtitle": "trabalhos em destaque",
+      "title": "projetos que vai adorar"
     }
   },
   "terms": {
@@ -214,5 +218,12 @@
     "en": "inglês",
     "fr": "francês",
     "pt": "português"
+  },
+  "Footer": {
+    "tagline": "A empresa é especializada em carpintaria de alta qualidade, com foco na personalização e na atenção ao detalhe.",
+    "quickLinks": "Links rápidos",
+    "legal": "Informação legal",
+    "info": "Contactos",
+    "rights": "Todos os direitos reservados."
   }
 }
