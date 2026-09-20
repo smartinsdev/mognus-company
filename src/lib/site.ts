@@ -1,4 +1,4 @@
-import { locales } from "@/i18n-config";
+import { locales, routing } from "@/i18n-config";
 
 // One origin, used by app/robots.ts, app/sitemap.ts and the layout's
 // generateMetadata. Before this the three disagreed: the metadata advertised
@@ -30,10 +30,21 @@ export function localeUrl(locale: string, route: string = ""): string {
 
 /**
  * The `alternates.languages` map for a route: every locale pointing at its own
- * translation of that same page.
+ * translation of that same page, plus `x-default`.
+ *
+ * The self-reference is deliberate — Google discards an hreflang set whose
+ * members do not all point back at each other, including at themselves.
+ *
+ * `x-default` resolves to the default locale rather than to `/`. `/` is the
+ * page that negotiates Accept-Language, which is the textbook x-default
+ * target, but it answers with a redirect; pointing crawlers at a 200 they can
+ * actually index is worth more here than the exact semantics.
  */
 export function languageAlternates(route: string = ""): Record<string, string> {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, localeUrl(locale, route)])
-  );
+  return {
+    ...Object.fromEntries(
+      locales.map((locale) => [locale, localeUrl(locale, route)])
+    ),
+    "x-default": localeUrl(routing.defaultLocale, route),
+  };
 }
