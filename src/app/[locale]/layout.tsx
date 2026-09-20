@@ -78,8 +78,13 @@ const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
 });
 
+// Only the three weights the markup actually asks for. Poppins is used on
+// headings and the desktop nav: 400 (NavLinks, which sets no weight), 700
+// (ServiceCard's h3) and 800 (every font-extrabold heading). The other five
+// weights were each emitting a render-blocking <link rel="preload"> on every
+// page for a face nothing rendered.
 const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700", "800"],
   subsets: ["latin"],
   variable: "--font-poppins-sans",
 });
