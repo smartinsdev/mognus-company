@@ -70,15 +70,18 @@ export const metadata: Metadata = {
   },
 };
 
+// The CSS variables are suffixed because Tailwind v4 derives the
+// `font-montserrat` utility from a `--font-montserrat` theme token. Reusing
+// the same name here would make that token reference itself.
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-montserrat-sans",
 });
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-poppins-sans",
 });
 
 type Props = {
@@ -100,17 +103,19 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className="scroll-smooth focus-within:scroll-smooth"
+      className={cn(
+        "scroll-smooth focus-within:scroll-smooth",
+        // The font variables live on <html> so they are defined on :root, where
+        // Tailwind v4's @theme tokens reference them. On <body> they would be
+        // out of scope: :root would compute --font-montserrat as invalid and
+        // <body> would inherit that computed value rather than re-resolving it.
+        montserrat.variable,
+        poppins.variable
+      )}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body
-        className={cn(
-          "bg-background text-foreground antialiased font-montserrat min-h-screen scroll-smooth",
-          montserrat.variable,
-          poppins.variable
-        )}
-      >
+      <body className="bg-background text-foreground antialiased font-montserrat min-h-screen scroll-smooth">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"

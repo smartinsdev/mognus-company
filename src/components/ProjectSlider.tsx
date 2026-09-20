@@ -83,7 +83,7 @@ export function ProjectSlider() {
             >
               <div className="relative overflow-hidden rounded-md group">
                 <Image src={item.src} alt={item.alt} placeholder="blur" />
-                <div className="absolute inset-0 w-full h-full flex items-end  bg-transparent group-hover:bg-gradient-to-b group-hover:from-transparent group-hover:via-transparent group-hover:to-primary group-hover:animate-in group-hover:fade-in-0">
+                <div className="absolute inset-0 w-full h-full flex items-end  bg-transparent group-hover:bg-linear-to-b group-hover:from-transparent group-hover:via-transparent group-hover:to-primary group-hover:animate-in group-hover:fade-in-0">
                   <h2 className="text-2xl relative bottom-14 pl-10 text-primary-foreground invisible group-hover:visible group-hover:animate-in group-hover:fade-in-0">
                     {item.alt}
                   </h2>

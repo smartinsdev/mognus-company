@@ -20,10 +20,10 @@ export function About() {
         <h2 className="font-poppins font-extrabold text-3xl uppercase">
           {t("about.title")}
         </h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("about.paragraphs.first")}
         </p>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("about.paragraphs.second")}
         </p>
         <ul className="grid grid-cols-2 gap-4 my-6 w-full max-w-lg">

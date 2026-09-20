@@ -23,35 +23,35 @@ export default function Policy({
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t("sub1")}</h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("p1")}
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t("sub2")}</h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("p2")}
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t("sub3")}</h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("p3")}
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t("sub4")}</h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("p4")}
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t("sub5")}</h2>
-        <p className="text-sm md:text-base leading-relaxed break-words max-w-prose dark:text-foreground/70">
+        <p className="text-sm md:text-base leading-relaxed wrap-break-word max-w-prose dark:text-foreground/70">
           {t("p5")}
         </p>
       </section>

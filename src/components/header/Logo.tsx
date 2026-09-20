@@ -2,7 +2,7 @@ export function Logo() {
   return (
     <a
       title="logo Mognus"
-      className="inline-flex h-12 w-40 items-center justify-center rounded-lg p-2 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring md:w-44 md:px-0"
+      className="inline-flex h-12 w-40 items-center justify-center rounded-lg p-2 focus-visible:outline-hidden focus-visible:ring-4 focus-visible:ring-ring md:w-44 md:px-0"
       href="/"
     >
       <svg

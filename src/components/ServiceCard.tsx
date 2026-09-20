@@ -19,7 +19,7 @@ export default function ServiceCard({ Icon, title, text }: ServiceCardProps) {
         <h3 className="text-xl font-poppins font-bold capitalize  text-center">
           {title}
         </h3>
-        <p className="text-xs text-muted-foreground leading-relaxed tracking-wide break-words text-center my-4">
+        <p className="text-xs text-muted-foreground leading-relaxed tracking-wide wrap-break-word text-center my-4">
           {text}
         </p>
       </CardContent>

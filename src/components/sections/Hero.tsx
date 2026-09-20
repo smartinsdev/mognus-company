@@ -15,11 +15,15 @@ export function Hero() {
         <span className="uppercase animate-in fade-in-0 slide-in-from-left-10 duration-1000 text-center lg:text-start tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">
           {t("hero.subtitle")}
         </span>
-        <h1 className="text-4xl animate-in fade-in-0 slide-in-from-left-10 duration-1000 md:max-w-2xl  lg:max-w-[43rem] text-center lg:text-start  lg:text-5xl xl:text-7xl font-poppins leading-snug capitalize font-extrabold">
+        {/* lg:leading-none is explicit because Tailwind v3 let the line-height
+            bundled with lg:text-5xl / xl:text-7xl override leading-snug, while
+            v4 does not. Without it the headline gains 27px per line at lg and
+            up. Mobile keeps leading-snug, which matched v3 already. */}
+        <h1 className="text-4xl animate-in fade-in-0 slide-in-from-left-10 duration-1000 md:max-w-2xl  lg:max-w-172 text-center lg:text-start  lg:text-5xl xl:text-7xl font-poppins leading-snug lg:leading-none capitalize font-extrabold">
           {t("hero.title")}
         </h1>
 
-        <p className="break-words animate-in fade-in-0 slide-in-from-left-10 duration-1000 text-center lg:text-start lg:mx-0 text-sm lg:text-base max-w-prose mx-auto pt-2 text-foreground dark:text-foreground/70 leading-relaxed tracking-wider">
+        <p className="wrap-break-word animate-in fade-in-0 slide-in-from-left-10 duration-1000 text-center lg:text-start lg:mx-0 text-sm lg:text-base max-w-prose mx-auto pt-2 text-foreground dark:text-foreground/70 leading-relaxed tracking-wider">
           {t("hero.paragraph")}
         </p>
         <div className="flex items-center justify-center lg:justify-start gap-2 pt-4 animate-in fade-in-0 slide-in-from-left-10 duration-1000">

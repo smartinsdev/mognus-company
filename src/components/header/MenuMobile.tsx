@@ -32,7 +32,7 @@ export function MenuMobile({ open, setToggle }: PropsMenuMobile) {
           <Link
             onClick={() => setToggle((value) => !value)}
             href={"/#home"}
-            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
           >
             <MdOutlineHome className="size-7 text-muted transition-colors group-hover:text-primary" />
             <span className="transition-colors group-hover:text-primary">
@@ -42,7 +42,7 @@ export function MenuMobile({ open, setToggle }: PropsMenuMobile) {
           <Link
             onClick={() => setToggle((value) => !value)}
             href={"/#about"}
-            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
           >
             <MdOutlineGroup className="size-7 transition-colors group-hover:text-primary" />
             <span className="transition-colors group-hover:text-primary">
@@ -52,7 +52,7 @@ export function MenuMobile({ open, setToggle }: PropsMenuMobile) {
           <Link
             onClick={() => setToggle((value) => !value)}
             href={"/#service"}
-            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
           >
             <MdOutlineMiscellaneousServices className="size-7 transition-colors group-hover:text-primary" />
             <span className="transition-colors group-hover:text-primary">
@@ -62,7 +62,7 @@ export function MenuMobile({ open, setToggle }: PropsMenuMobile) {
           <Link
             onClick={() => setToggle((value) => !value)}
             href={"/#project"}
-            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
           >
             <MdOutlineElectricBolt className="size-7 transition-colors group-hover:text-primary" />
             <span className="transition-colors group-hover:text-primary">
@@ -72,7 +72,7 @@ export function MenuMobile({ open, setToggle }: PropsMenuMobile) {
           <Link
             onClick={() => setToggle((value) => !value)}
             href={"/#contact"}
-            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex items-center font-semibold capitalize py-2 px-1 text-lg rounded-md justify-start space-x-4 group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
           >
             <MdAlternateEmail className="size-7 transition-colors group-hover:text-primary" />
             <span className="transition-colors group-hover:text-primary">
