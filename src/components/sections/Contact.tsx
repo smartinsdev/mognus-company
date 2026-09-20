@@ -13,7 +13,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="pt-24 lg:pt-32 bg-muted relative">
-      <div className="flex  flex-col px-8 max-w-[1440px] mx-auto gap-14">
+      <div className="flex  flex-col px-8 max-w-360 mx-auto gap-14">
         <div className="flex flex-col items-center gap-4">
           <span className="uppercase tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">
             {t("subtitle")}
@@ -66,6 +66,7 @@ export function Contact() {
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <title>Decorative wave</title>
           <defs>
             <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
               <stop stopColor="rgba(243, 106, 62, 1)" offset="0%"></stop>

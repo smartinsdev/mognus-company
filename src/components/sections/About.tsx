@@ -11,7 +11,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="pb-24 pt-32 min-h-dvh max-w-[1440px] px-8 mx-auto items-center lg:items-start flex flex-col lg:flex-row-reverse gap-6"
+      className="pb-24 pt-32 min-h-dvh max-w-360 px-8 mx-auto items-center lg:items-start flex flex-col lg:flex-row-reverse gap-6"
     >
       <div className="flex flex-col pt-8 items-center md:items-start lg:pt-12 gap-4">
         <span className="uppercase tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">
@@ -75,7 +75,7 @@ export function About() {
           </Link>
         </Button>
       </div>
-      <div className="relative overflow-hidden w-full sm:w-[550px] mx-auto md:mx-0 lg:w-[660px] lg:h-[700px] object-cover">
+      <div className="relative overflow-hidden w-full sm:w-137.5 mx-auto md:mx-0 lg:w-165 lg:h-175 object-cover">
         <Link
           // `/#project`, not `#/project`: the old value was a link to the
           // literal fragment `/project` on the current page, which matches no

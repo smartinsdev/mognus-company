@@ -10,7 +10,7 @@ import { Link } from "@/navigation";
 export function Footer() {
   return (
     <footer className="bg-[#0c0a09] py-12">
-      <div className="max-w-[1440px] px-6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:justify-items-center items-start">
+      <div className="max-w-360 px-6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:justify-items-center items-start">
         <div className="flex flex-col gap-4 md:col-span-2">
           <h2 className="text-neutral-100 text-2xl">Mognu&apos;s Company</h2>
           <p className="text-neutral-600 max-w-[50ch]">
