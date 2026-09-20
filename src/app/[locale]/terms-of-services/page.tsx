@@ -1,10 +1,29 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { locales } from "@/i18n-config";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+// The title is the page's own heading, so the two never drift apart. The
+// layout's template appends the brand.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "terms.services" });
+
+  return pageMetadata({
+    locale,
+    route: "/terms-of-services",
+    title: t("title"),
+  });
 }
 
 export default function Terms({

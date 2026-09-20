@@ -3,71 +3,87 @@ import { Montserrat, Poppins } from "next/font/google";
 
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { locales, routing } from "@/i18n-config";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import "../globals.css";
 import { Footer } from "@/components/footer/Footer";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-export const metadata: Metadata = {
-  title: "Mognu's Company",
-  description:
-    "Nous sommes Mognu's, une entreprise de charpenterie spécialisée dans la création de meubles sur mesure.",
-  keywords: [
-    "Carpintaria personalizada",
-    "Móveis de madeira sob medida",
-    "Técnicas de marcenaria",
-    "Móveis artesanais",
-    "Design de interiores em madeira",
-    "Menuiserie sur mesure",
-    "Meubles en bois personnalisés",
-    "Techniques de menuiserie",
-    "Meubles artisanaux",
-    "Design d'intérieur en bois",
-  ],
-  authors: {
-    name: "Sinval Martins",
-    url: "https://github.com/smartinsdev",
-  },
-  icons: [
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "32x32",
-      url: "/favicon-32x32.png",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "16x16",
-      url: "/favicon-16x16.png",
-    },
-
-    {
-      rel: "apple-touch-icon",
-      sizes: "180x180",
-      url: "/apple-touch-icon.png",
-    },
-  ],
-  manifest: "/site.webmanifest",
-  openGraph: {
-    title: "Mognu's",
-    description:
-      "Nous sommes Mognu's, une entreprise de charpenterie spécialisée dans la création de meubles sur mesure.",
-    url: "https://mognuscompany.com",
-    images: "https://mognuscompany.com/mognus-opgraph.jpg",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mognu's",
-    description:
-      "Nous sommes Mognu's, une entreprise de charpenterie spécialisée dans la création de meubles sur mesure.",
-    site: "https://mognuscompany.com",
-    images: "https://mognuscompany.com/mognus-opgraph.jpg",
-  },
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 };
+
+// Was `export const metadata`, a static object. A static export cannot read
+// `params`, so every locale served the same French title, description and
+// social card — verifiable in the old build output, where /en and /pt both
+// carried "Nous sommes Mognu's...".
+//
+// Only what is genuinely shared across the four pages lives here. Anything
+// that identifies a specific page — canonical, hreflang, Open Graph — is built
+// per page by `pageMetadata`, because metadata merges shallowly and a single
+// `alternates` here would give the policy pages the homepage's canonical.
+export async function generateMetadata({
+  params,
+}: Omit<Props, "children">): Promise<Metadata> {
+  const { locale } = await params;
+  // generateMetadata resolves before the layout body runs, so it sees invalid
+  // locales too. Falling back keeps next-intl's message loader from throwing
+  // on a path the layout is about to answer with a 404 anyway.
+  const active = hasLocale(routing.locales, locale)
+    ? locale
+    : routing.defaultLocale;
+  const t = await getTranslations({ locale: active, namespace: "Meta" });
+
+  return {
+    // Lets every URL-bearing field below, and in pageMetadata, be written as a
+    // path instead of repeating the host.
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: t("title"),
+      // Applies to any page that sets a plain string title — the three policy
+      // pages. The homepage sets none and keeps `default` as-is.
+      template: `%s | ${SITE_NAME}`,
+    },
+    description: t("description"),
+    // One comma-separated string per catalogue so translators edit prose, not
+    // a JSON array.
+    keywords: t("keywords")
+      .split(",")
+      .map((keyword) => keyword.trim()),
+    authors: {
+      name: "Sinval Martins",
+      url: "https://github.com/smartinsdev",
+    },
+    icons: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/favicon-16x16.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        url: "/apple-touch-icon.png",
+      },
+    ],
+    manifest: "/site.webmanifest",
+  };
+}
 
 // The CSS variables are suffixed because Tailwind v4 derives the
 // `font-montserrat` utility from a `--font-montserrat` theme token. Reusing
@@ -87,11 +103,6 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins-sans",
 });
-
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

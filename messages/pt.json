@@ -1,4 +1,9 @@
 {
+  "Meta": {
+    "title": "Mognu’s Company — Carpintaria e Móveis Sob Medida",
+    "description": "A Mognu’s é uma carpintaria especializada em móveis sob medida: cozinhas, roupeiros, estantes e acabamentos em madeira, em Portugal e em França.",
+    "keywords": "carpintaria personalizada, móveis sob medida, marcenaria artesanal, móveis artesanais, design de interiores em madeira, roupeiros por medida, cozinhas por medida"
+  },
   "Index": {
     "nav": {
       "home": "início",

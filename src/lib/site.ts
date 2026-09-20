@@ -10,6 +10,25 @@ import { locales, routing } from "@/i18n-config";
 // every canonical emitted below resolves through a redirect.
 export const SITE_URL = "https://www.mognuscompany.com";
 
+export const SITE_NAME = "Mognu's Company";
+
+// Resolved against metadataBase, so it follows SITE_URL rather than repeating
+// the host. 1200x630 is the size the file already is.
+export const OG_IMAGE = {
+  url: "/mognus-opgraph.jpg",
+  width: 1200,
+  height: 630,
+} as const;
+
+// Open Graph wants a language_TERRITORY tag, not the bare code the routes use.
+// The territories follow the company's two markets; `en` is the international
+// catch-all and gets GB as the nearest European variant.
+export const OG_LOCALES: Record<string, string> = {
+  en: "en_GB",
+  fr: "fr_FR",
+  pt: "pt_PT",
+};
+
 // Every page under `[locale]`, as a path suffix. `""` is the homepage. The
 // sitemap crosses this with `locales` to produce the full URL set; keeping it
 // here means a new page is added in one place rather than remembered.

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
@@ -5,9 +6,21 @@ import { Hero } from "@/components/sections/Hero";
 import { Project } from "@/components/sections/Project";
 import { Service } from "@/components/sections/Service";
 import { locales } from "@/i18n-config";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+// No `title`: the homepage keeps the site title from the layout rather than
+// running it through the `%s | Mognu's Company` template and repeating itself.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata({ locale });
 }
 
 export default async function Home({

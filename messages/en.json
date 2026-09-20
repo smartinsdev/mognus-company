@@ -1,4 +1,9 @@
 {
+  "Meta": {
+    "title": "Mognu’s Company — Bespoke Carpentry & Custom Furniture",
+    "description": "Mognu’s is a carpentry company specialising in bespoke furniture: custom kitchens, fitted wardrobes, shelving and interior fit-outs in Portugal and France.",
+    "keywords": "bespoke carpentry, custom furniture, made-to-measure furniture, handcrafted furniture, wood interior design, fitted wardrobes, custom kitchens"
+  },
   "Index": {
     "nav": {
       "home": "home",
