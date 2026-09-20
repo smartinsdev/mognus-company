@@ -1,25 +1,25 @@
-# Migração: dependências, Tailwind v4 e Biome
+# Migration: dependencies, Tailwind v4, and Biome
 
-Executada em 2026-09-20, na branch `chore/upgrade-nextjs-16`, em sete commits
-revertíveis isoladamente.
+Carried out on 2026-09-20, on the `chore/upgrade-nextjs-16` branch, across seven
+commits that can each be reverted on their own.
 
-## Resumo
+## Summary
 
-- Todas as dependências foram para a última versão estável.
-- Tailwind CSS migrado da v3 para a v4 (configuração em CSS, sem
+- Every dependency moved to its latest stable version.
+- Tailwind CSS migrated from v3 to v4 (configuration in CSS, no
   `tailwind.config.ts`).
-- ESLint substituído pelo Biome. O projeto não usava Prettier.
-- Componentes shadcn/ui re-vendorizados na revisão para Tailwind v4.
-- Removido o código morto comprovado e quatro dependências órfãs.
+- ESLint replaced by Biome. The project did not use Prettier.
+- shadcn/ui components re-vendored at the Tailwind v4 revision.
+- Proven dead code and four orphaned dependencies removed.
 
-`next`, `react` e `react-dom` **não** foram tocados: já estavam na última versão
-(16.3.5 / 19.3.0), atualizados numa passagem anterior.
+`next`, `react`, and `react-dom` were **not** touched: they were already at the
+latest version (16.3.5 / 19.3.0), updated in an earlier pass.
 
-## Tabela de versões
+## Version tables
 
-### Atualizados
+### Updated
 
-| Pacote | De | Para |
+| Package | From | To |
 |---|---|---|
 | `@hookform/resolvers` | 3.9 | 5.9.1 |
 | `@radix-ui/react-icons` | 1.3.0 | 1.3.2 |
@@ -37,84 +37,84 @@ revertíveis isoladamente.
 | `typescript` | 5.x | 5.9.3 |
 | `zod` | 3.23.8 | 4.6.5 |
 
-`clsx`, `next-intl` e `next-themes` já estavam na última versão.
+`clsx`, `next-intl`, and `next-themes` were already at the latest version.
 
-### Adicionados
+### Added
 
-| Pacote | Versão | Motivo |
+| Package | Version | Reason |
 |---|---|---|
-| `@biomejs/biome` | 2.5.14 | substitui o ESLint |
-| `@tailwindcss/postcss` | 4.3.3 | plugin PostCSS exigido pela v4 |
-| `tw-animate-css` | 1.4.0 | sucessor do `tailwindcss-animate` na v4 |
-| `radix-ui` | 1.6.7 | pacote unificado usado pelos componentes shadcn v4 |
-| `lucide-react` | 1.47.0 | ícones dos componentes shadcn v4 |
+| `@biomejs/biome` | 2.5.14 | replaces ESLint |
+| `@tailwindcss/postcss` | 4.3.3 | PostCSS plugin required by v4 |
+| `tw-animate-css` | 1.4.0 | successor to `tailwindcss-animate` in v4 |
+| `radix-ui` | 1.6.7 | unified package used by the shadcn v4 components |
+| `lucide-react` | 1.47.0 | icons for the shadcn v4 components |
 
-### Removidos
+### Removed
 
-| Pacote | Motivo |
+| Package | Reason |
 |---|---|
-| `eslint`, `eslint-config-next` | substituídos pelo Biome |
-| `@radix-ui/react-toast` | única consumidora era o cluster morto de toast |
-| `@radix-ui/react-dropdown-menu` | substituído pelo pacote `radix-ui` unificado |
-| `@radix-ui/react-label` | idem |
-| `@radix-ui/react-slot` | idem |
-| `tailwindcss-animate` | plugin v3; substituído por `tw-animate-css` |
+| `eslint`, `eslint-config-next` | replaced by Biome |
+| `@radix-ui/react-toast` | its only consumer was the dead toast cluster |
+| `@radix-ui/react-dropdown-menu` | replaced by the unified `radix-ui` package |
+| `@radix-ui/react-label` | same |
+| `@radix-ui/react-slot` | same |
+| `tailwindcss-animate` | v3 plugin; replaced by `tw-animate-css` |
 
-## Por que TypeScript 5.9.3 e não 7.x
+## Why TypeScript 5.9.3 and not 7.x
 
-O TypeScript 7.0.2 é a última versão publicada, mas é um compilador diferente
-(reescrita nativa) e o suporte ao plugin `{ "name": "next" }` do `tsconfig.json`
-ainda diverge. Adotá-lo introduziria erros sem relação com esta migração.
+TypeScript 7.0.2 is the latest published version, but it is a different compiler
+(a native rewrite) and support for the `{ "name": "next" }` plugin in
+`tsconfig.json` still diverges. Adopting it would introduce errors unrelated to
+this migration.
 
 ## Tailwind v4
 
-A migração usou `npx @tailwindcss/upgrade@4.3.3`, que converteu
-`tailwind.config.ts` num bloco `@theme` dentro de `src/app/globals.css`, trocou o
-plugin do PostCSS e aplicou os codemods de nome de classe
+The migration used `npx @tailwindcss/upgrade@4.3.3`, which converted
+`tailwind.config.ts` into an `@theme` block inside `src/app/globals.css`,
+swapped the PostCSS plugin, and applied the class-name codemods
 (`outline-none`→`outline-hidden`, `shadow-sm`→`shadow-xs`,
 `bg-gradient-to-*`→`bg-linear-to-*`, `break-words`→`wrap-break-word`).
 
-A paleta laranja e o `--radius: 0.75rem` foram preservados: medidos nos dois
-builds, `background` e `foreground` do `<body>` continuam em `255,255,255` e
+The orange palette and `--radius: 0.75rem` were preserved: measured across both
+builds, the `<body>`'s `background` and `foreground` are still `255,255,255` and
 `12,10,9`.
 
-Quatro coisas o codemod **não** cobriu e foram feitas à mão:
+Four things the codemod did **not** cover, done by hand:
 
-1. **Variáveis de fonte.** As variáveis do `next/font` passaram a
-   `--font-montserrat-sans` / `--font-poppins-sans` e migraram do `<body>` para
-   o `<html>`. Na v4 o utilitário `font-montserrat` deriva do token
-   `--font-montserrat` declarado em `:root`; com o nome antigo o token
-   referenciava a si mesmo, e com as variáveis no `<body>` o `:root` não
-   conseguia resolvê-las. **Sem essa correção o site inteiro caía para uma
-   sans-serif genérica.**
+1. **Font variables.** The `next/font` variables became
+   `--font-montserrat-sans` / `--font-poppins-sans` and moved from `<body>` to
+   `<html>`. In v4 the `font-montserrat` utility derives from the
+   `--font-montserrat` token declared on `:root`; under the old name that token
+   referenced itself, and with the variables on `<body>`, `:root` could not
+   resolve them. **Without this fix the entire site fell back to a generic
+   sans-serif.**
 
-2. **`tailwindcss-animate` → `tw-animate-css`.** Não era dependência morta,
-   apesar de aparecer uma única vez no código: alimenta mais de 60 utilitários
-   em uso (`animate-in`, `fade-in-0`, `slide-in-from-*`, `zoom-in-95`).
+2. **`tailwindcss-animate` → `tw-animate-css`.** Not a dead dependency, despite
+   appearing exactly once in the code: it powers more than 60 utilities in use
+   (`animate-in`, `fade-in-0`, `slide-in-from-*`, `zoom-in-95`).
 
-3. **`space-x` → `gap` no `NavBar`.** A v4 põe a margem à direita de todos os
-   filhos menos o último; o botão de menu `md:hidden` deixava 12px de espaço
-   sobrando no desktop. É a única linha `space-*` da aplicação com um filho
-   `display:none`.
+3. **`space-x` → `gap` in `NavBar`.** v4 puts the margin on the right of every
+   child but the last; the `md:hidden` menu button left 12px of trailing space
+   on desktop. It is the application's only `space-*` line with a
+   `display:none` child.
 
-4. **`lg:leading-none` no `<h1>` do Hero.** Na v3 a entrelinha embutida em
-   `lg:text-5xl` / `xl:text-7xl` sobrescrevia o `leading-snug`; na v4 não. Sem a
-   classe explícita o título ganhava 27px por linha (108px no total, em 4
-   linhas). No mobile já era idêntico nas duas versões.
+4. **`lg:leading-none` on the Hero's `<h1>`.** In v3 the line height baked into
+   `lg:text-5xl` / `xl:text-7xl` overrode `leading-snug`; in v4 it does not.
+   Without the explicit class the heading gained 27px per line (108px in total,
+   across 4 lines). On mobile it was already identical in both versions.
 
-Também foram removidos da configuração: o bloco `container` (a classe nunca é
-usada no código) e as keyframes de accordion (não há componente accordion nem
-`@radix-ui/react-accordion` no projeto).
+Also removed from the configuration: the `container` block (the class is never
+used in the code) and the accordion keyframes (there is no accordion component
+and no `@radix-ui/react-accordion` in the project).
 
 ## Biome
 
-Não havia Prettier no projeto, então a substituição foi só do ESLint. O
-`biome.json` configura o formatter para o estilo já praticado no código — 2
-espaços, aspas duplas, ponto-e-vírgula — de modo que o commit de formatação
-ficasse restrito aos arquivos shadcn vendorizados, que vinham sem
-ponto-e-vírgula.
+There was no Prettier in the project, so only ESLint was replaced. `biome.json`
+configures the formatter to match the style the code already followed — 2
+spaces, double quotes, semicolons — so that the formatting commit stayed
+confined to the vendored shadcn files, which arrived without semicolons.
 
-Scripts novos:
+New scripts:
 
 ```
 pnpm lint     # biome lint .
@@ -122,103 +122,104 @@ pnpm format   # biome format --write .
 pnpm check    # biome check --write .
 ```
 
-Regras ajustadas deliberadamente, para que a troca de ferramenta não virasse um
+Rules adjusted deliberately, so that swapping tools would not turn into a
 refactor:
 
-| Regra | Ajuste | Motivo |
+| Rule | Adjustment | Reason |
 |---|---|---|
-| `style/noNonNullAssertion` | `off` | Os 6 casos são leituras de `process.env` em `lib/nodemailer.ts`; satisfazer a regra mudaria o comportamento em runtime. |
-| `suspicious/noUnknownAtRules` | `off` | At-rules do Tailwind. Também foi ligado `css.parser.tailwindDirectives` para o `@apply` ser parseado. |
-| `a11y/noSvgWithoutTitle` | `warn` | Problemas reais e preexistentes, mas corrigi-los exige mudar markup — fora do escopo desta migração. |
-| `a11y/noStaticElementInteractions` | `warn` | idem |
-| `a11y/useKeyWithClickEvents` | `warn` | idem |
-| `a11y/useSemanticElements` | `warn` | idem |
-| `suspicious/noArrayIndexKey` | `warn` | idem |
+| `style/noNonNullAssertion` | `off` | All 6 cases are `process.env` reads in `lib/nodemailer.ts`; satisfying the rule would change runtime behavior. |
+| `suspicious/noUnknownAtRules` | `off` | Tailwind at-rules. `css.parser.tailwindDirectives` was also enabled so that `@apply` is parsed. |
+| `a11y/noSvgWithoutTitle` | `warn` | Real, pre-existing problems, but fixing them requires markup changes — out of scope for this migration. |
+| `a11y/noStaticElementInteractions` | `warn` | same |
+| `a11y/useKeyWithClickEvents` | `warn` | same |
+| `a11y/useSemanticElements` | `warn` | same |
+| `suspicious/noArrayIndexKey` | `warn` | same |
 
-Hoje `pnpm lint` termina com 0 erros e 7 avisos, todos nas categorias acima.
-Eles ficam registrados como dívida a tratar quando houver espaço para mexer em
-markup.
+At the end of the migration, `pnpm lint` finished with 0 errors and 7 warnings,
+all in the categories above. They are recorded as debt to be addressed when
+there is room to touch markup.
 
-## Código removido
+## Code removed
 
-**Cluster morto de toast.** `src/components/ui/toaster.tsx` não tinha nenhum
-importador; ele puxava `src/hooks/use-toast.ts`, que puxava
-`src/components/ui/toast.tsx` — um ciclo fechado sem porta de entrada. A
-aplicação emite toasts pelo `sonner`, via `ui/sonner.tsx`, montado no layout de
-locale. Os três arquivos foram apagados (`src/hooks/` ficou vazio e sumiu) e a
-dependência `@radix-ui/react-toast` foi removida junto.
+**Dead toast cluster.** `src/components/ui/toaster.tsx` had no importer; it
+pulled in `src/hooks/use-toast.ts`, which pulled in
+`src/components/ui/toast.tsx` — a closed cycle with no entry point. The
+application emits toasts through `sonner`, via `ui/sonner.tsx`, mounted in the
+locale layout. The three files were deleted (`src/hooks/` was left empty and
+went with them) and the `@radix-ui/react-toast` dependency was removed along
+with them.
 
-**Prop `isScrolled` do `Logo`.** Declarada, desestruturada e nunca lida; o
-`NavBar` renderiza `<Logo />` sem props.
+**`Logo`'s `isScrolled` prop.** Declared, destructured, and never read; `NavBar`
+renders `<Logo />` with no props.
 
-**Imports não utilizados.** Seis arquivos, em sua maioria `import * as React`
-remanescente do transform JSX clássico.
+**Unused imports.** Six files, mostly `import * as React` left over from the
+classic JSX transform.
 
-Critério aplicado: só foi removido o que tem zero referências comprovadas. Nada
-foi removido por suspeita.
+Criterion applied: only what has zero proven references was removed. Nothing was
+removed on suspicion.
 
-## Mudanças visuais conhecidas e aceitas
+## Known and accepted visual changes
 
-A migração foi verificada comparando, a cada etapa, 20 screenshots (3 locales ×
-2 temas × 2 viewports, mais as páginas de política e os estados interativos)
-contra um baseline capturado antes de qualquer alteração, e comparando estilos
-computados elemento a elemento contra um build do commit anterior ao Tailwind.
+The migration was verified by comparing, at each step, 20 screenshots (3 locales
+× 2 themes × 2 viewports, plus the policy pages and the interactive states)
+against a baseline captured before any change, and by comparing computed styles
+element by element against a build of the commit preceding Tailwind.
 
-Biome, remoção de código morto, as 11 atualizações sem breaking change e a
-migração zod 4 / nodemailer 10 produziram **20 de 20 screenshots byte-idênticos**
-ao baseline — zero mudança visual.
+Biome, the dead-code removal, the 11 non-breaking updates, and the zod 4 /
+nodemailer 10 migration produced **20 of 20 screenshots byte-identical** to the
+baseline — zero visual change.
 
-O Tailwind v4 e a re-vendorização do shadcn produziram estas diferenças, todas
-intencionais ou inerentes:
+Tailwind v4 and the shadcn re-vendoring produced these differences, all of them
+either intentional or inherent:
 
-1. **Campos de formulário inválidos ganham borda destrutiva.** É o estilo
-   `aria-invalid` dos componentes shadcn v4. Antes só havia o texto vermelho
-   abaixo do campo.
-2. **Padding dos `Card` redistribuído.** Saiu de `CardHeader`/`CardContent`
-   (`p-6`) para o próprio `Card` (`py-6` + `gap-6`).
-3. **Texto do CTA do header em 14px, era 12px.** O `text-sm` do próprio botão
-   passou a vencer o `text-xs` do link filho.
-4. **`FormLabel` passou a ter layout de bloco** e `FormItem` virou `grid gap-2`.
-   Isso também corrigiu um bug: na v4 o `space-y-2` colocava uma margem
-   vertical no `<label>`, que é `display:inline` e portanto a ignorava,
-   encolhendo cada campo em 8px.
-5. **Anel de foco do `Button`:** `ring-[3px] ring-ring/50`, antes `ring-1
+1. **Invalid form fields now get a destructive border.** That is the
+   `aria-invalid` styling of the shadcn v4 components. Before, there was only
+   the red text below the field.
+2. **`Card` padding redistributed.** It moved out of `CardHeader`/`CardContent`
+   (`p-6`) and onto the `Card` itself (`py-6` + `gap-6`).
+3. **The header CTA text is 14px, was 12px.** The button's own `text-sm` now
+   wins over the child link's `text-xs`.
+4. **`FormLabel` now has block layout** and `FormItem` became `grid gap-2`. That
+   also fixed a bug: in v4 `space-y-2` placed a vertical margin on the
+   `<label>`, which is `display:inline` and therefore ignored it, shrinking each
+   field by 8px.
+5. **`Button` focus ring:** `ring-[3px] ring-ring/50`, previously `ring-1
    ring-ring`.
-6. **`neutral-400` foi de `163,163,163` para `161,161,161`**, efeito da paleta
-   OKLCH da v4. As cores próprias do projeto não mudaram.
-7. **Entrelinha de parágrafos com `leading-relaxed` foi de 24px para 26px**, nos
-   breakpoints onde há também um `md:text-base` ou `lg:text-base`. Na v3 a
-   entrelinha embutida no `text-*` responsivo sobrescrevia silenciosamente o
-   `leading-relaxed`; na v4 o `leading-relaxed` passa a valer, que é o que o
-   código pede em 55 lugares. Afeta sobretudo as três páginas de política e a
-   seção "Sobre nós". **Se preferir o espaçamento anterior, basta acrescentar
-   `md:leading-normal` (ou `lg:leading-normal`) junto de cada
-   `leading-relaxed`** — o commit do Tailwind pode ser ajustado sem tocar no
-   resto.
+6. **`neutral-400` went from `163,163,163` to `161,161,161`**, an effect of v4's
+   OKLCH palette. The project's own colors did not change.
+7. **Paragraph line height with `leading-relaxed` went from 24px to 26px**, at
+   the breakpoints where there is also an `md:text-base` or `lg:text-base`. In
+   v3 the line height baked into the responsive `text-*` silently overrode
+   `leading-relaxed`; in v4 `leading-relaxed` takes effect, which is what the
+   code asks for in 55 places. It mainly affects the three policy pages and the
+   "About us" section. **If you prefer the previous spacing, adding
+   `md:leading-normal` (or `lg:leading-normal`) alongside each
+   `leading-relaxed` is enough** — the Tailwind commit can be adjusted without
+   touching the rest.
 
-Correção latente que a v4 trouxe de brinde: `header/SwitcherLang.tsx` usa
-`focus:ring-3`. A escala da v3 era 0/1/2/4/8, então essa classe não produzia
-estilo nenhum. Na v4 `ring-3` é válida e o anel de foco passa a aparecer no
-botão de troca de idioma.
+A latent fix v4 threw in for free: `header/SwitcherLang.tsx` uses
+`focus:ring-3`. The v3 scale was 0/1/2/4/8, so that class produced no style at
+all. In v4 `ring-3` is valid and the focus ring now appears on the language
+switcher button.
 
-## Pendente de verificação manual
+## Pending manual verification
 
-**Envio real de e-mail.** Não existe `.env` no projeto, então o `nodemailer` 10
-só pôde ser exercitado até o ponto da conexão. O que foi verificado:
+**Real email delivery.** There is no `.env` in the project, so nodemailer 10
+could only be exercised up to the point of connection. What was verified:
 
-- `createTransport` e `sendMail` mantêm a mesma assinatura;
-- uma chamada real falha com `ESOCKET` / `ECONNREFUSED`, ou seja, falha de
-  rede por não haver host configurado, e não incompatibilidade de API;
-- no browser, uma submissão válida percorre o caminho completo e exibe o toast
-  de erro esperado.
+- `createTransport` and `sendMail` keep the same signature;
+- a real call fails with `ESOCKET` / `ECONNREFUSED` — that is, a network
+  failure from having no host configured, not an API incompatibility;
+- in the browser, a valid submission travels the full path and shows the
+  expected error toast.
 
-**Falta testar com credenciais reais**: o envio bem-sucedido e o toast de
-sucesso.
+**Still to be tested with real credentials**: a successful send and the success
+toast.
 
-## Fora de escopo
+## Out of scope
 
 - TypeScript 7
-- Introdução de uma suíte de testes (o projeto não tem nenhuma)
-- Atualização de `next` / `react` / `react-dom`, já na última versão
-- Correção dos 7 avisos de acessibilidade do Biome
-- Qualquer refactor não exigido pelas migrações acima
+- Introducing a test suite (the project has none)
+- Updating `next` / `react` / `react-dom`, already at the latest version
+- Fixing Biome's 7 accessibility warnings
+- Any refactor not required by the migrations above
