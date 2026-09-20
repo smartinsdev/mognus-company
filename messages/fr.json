@@ -4,6 +4,11 @@
     "description": "Mognu’s est une entreprise de menuiserie spécialisée dans le mobilier sur mesure : cuisines, dressings, étagères et agencements, au Portugal et en France.",
     "keywords": "menuiserie sur mesure, meubles personnalisés, mobilier sur mesure, meubles artisanaux, design d’intérieur en bois, dressing sur mesure, cuisine sur mesure"
   },
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n’existe pas ou a été déplacée.",
+    "cta": "Retour à l’accueil"
+  },
   "Index": {
     "nav": {
       "home": "accueil",

@@ -4,6 +4,11 @@
     "description": "A Mognu’s é uma carpintaria especializada em móveis sob medida: cozinhas, roupeiros, estantes e acabamentos em madeira, em Portugal e em França.",
     "keywords": "carpintaria personalizada, móveis sob medida, marcenaria artesanal, móveis artesanais, design de interiores em madeira, roupeiros por medida, cozinhas por medida"
   },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "A página que procura não existe ou foi movida.",
+    "cta": "Voltar ao início"
+  },
   "Index": {
     "nav": {
       "home": "início",
