@@ -1,4 +1,5 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n-config";
 import { useTranslations } from "next-intl";
 
@@ -7,11 +8,12 @@ export function generateStaticParams() {
 }
 
 export default function Terms({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("terms.services");
   return (
     <main className="pb-24 pt-32 min-h-dvh max-w-3xl px-8 mx-auto">

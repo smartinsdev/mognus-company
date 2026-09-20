@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, unstable_setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
-import { locales } from "@/i18n-config";
+import { locales, routing } from "@/i18n-config";
 import "../globals.css";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -83,24 +84,25 @@ const poppins = Poppins({
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: Props) {
-  unstable_setRequestLocale(locale);
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <html
       lang={locale}
       className="scroll-smooth focus-within:scroll-smooth"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body
