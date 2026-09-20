@@ -57,19 +57,34 @@ const images = [
 
 export function ProjectSlider() {
   const [api, setApi] = React.useState<CarouselApi>();
-  const [count, setCount] = React.useState(0);
+  const [snaps, setSnaps] = React.useState<number[]>([]);
   const [current, setCurrent] = React.useState(0);
 
   React.useEffect(() => {
     if (!api) {
       return;
     }
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
 
-    api.on("select", () => {
+    const sync = () => {
+      setSnaps(api.scrollSnapList());
       setCurrent(api.selectedScrollSnap());
-    });
+    };
+
+    sync();
+
+    // "reInit" as well as "select". Embla defaults to containScroll:
+    // "trimSnaps", so the snap count depends on how many slides fit: eight at
+    // basis-full, six once md:basis-1/3 shows three at a time. Reading it only
+    // when the api first arrives left two dead dots behind after a resize
+    // across the breakpoint.
+    api.on("select", sync).on("reInit", sync);
+
+    // The old effect never unsubscribed. Embla drops its listeners on
+    // destroy, but nothing guarantees the carousel is destroyed before this
+    // effect re-runs, and React re-runs it on every remount in development.
+    return () => {
+      api.off("select", sync).off("reInit", sync);
+    };
   }, [api]);
 
   return (
@@ -104,9 +119,12 @@ export function ProjectSlider() {
         </CarouselContent>
       </Carousel>
       <div className="flex gap-4 items-center">
-        {Array.from({ length: count }).map((_, index) => (
+        {/* Keyed by the snap's own scroll position rather than the array
+            index: the list is rebuilt from scratch on every reInit, and the
+            positions are unique and stable for a given layout. */}
+        {snaps.map((snap, index) => (
           <Button
-            key={index}
+            key={snap}
             variant="ghost"
             size="icon"
             className={cn(
