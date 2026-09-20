@@ -1,14 +1,13 @@
+import { useTranslations } from "next-intl";
 import {
-  MdOutlineRestaurant,
   MdOutlineBlindsClosed,
-  MdShelves,
-  MdOutlineHomeRepairService,
   MdOutlineCoPresent,
+  MdOutlineHomeRepairService,
+  MdOutlineRestaurant,
+  MdShelves,
   MdStarOutline,
 } from "react-icons/md";
-
 import ServiceCard from "../ServiceCard";
-import { useTranslations } from "next-intl";
 
 export function Service() {
   const t = useTranslations("Index");

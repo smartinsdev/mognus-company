@@ -4,14 +4,13 @@ import { Montserrat, Poppins } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-
-import { cn } from "@/lib/utils";
 import { locales, routing } from "@/i18n-config";
+import { cn } from "@/lib/utils";
 import "../globals.css";
+import { Footer } from "@/components/footer/Footer";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
-import { Footer } from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Mognu's Company",

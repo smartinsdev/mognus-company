@@ -1,17 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
-
-import { Button } from "../ui/button";
+import { useState } from "react";
+import { IoClose, IoMenu } from "react-icons/io5";
 import { Link } from "@/navigation";
-import { IoMenu, IoClose } from "react-icons/io5";
-
-import { SwitcherLang } from "./SwitcherLang";
-import { NavLinks } from "./NavLinks";
-import { Logo } from "./Logo";
 import { ModeToggle } from "../ModeToggle";
+import { Button } from "../ui/button";
+import { Logo } from "./Logo";
 import { MenuMobile } from "./MenuMobile";
+import { NavLinks } from "./NavLinks";
+import { SwitcherLang } from "./SwitcherLang";
 
 export default function NavBar() {
   const [open, setToggle] = useState(false);

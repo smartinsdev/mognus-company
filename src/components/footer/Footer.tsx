@@ -1,10 +1,6 @@
 import Link from "next/link";
-import {
-  MdMailOutline,
-  MdOutlinePhone,
-  MdOutlinePinDrop,
-} from "react-icons/md";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { MdMailOutline, MdOutlinePinDrop } from "react-icons/md";
 
 export function Footer() {
   return (

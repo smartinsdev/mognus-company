@@ -1,18 +1,16 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
+import { BsTranslate } from "react-icons/bs";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-import { BsTranslate } from "react-icons/bs";
-import { useTranslations } from "next-intl";
-import { Button } from "../ui/button";
 import { usePathname, useRouter } from "@/navigation";
+import { Button } from "../ui/button";
 
 export function SwitcherLang() {
   const t = useTranslations("SwitchLang");

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import banner from "@/assets/banner-image 1.png";
-import { Button } from "../ui/button";
-import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import banner from "@/assets/banner-image 1.png";
+import { Link } from "@/navigation";
+import { Button } from "../ui/button";
 
 export function Hero() {
   const t = useTranslations("Index");

@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { MdCheckCircle } from "react-icons/md";
 import aboutImage from "@/assets/about.png";
-import Link from "next/link";
 import { Button } from "../ui/button";
-import { useTranslations } from "next-intl";
 
 export function About() {
   const t = useTranslations("Index");

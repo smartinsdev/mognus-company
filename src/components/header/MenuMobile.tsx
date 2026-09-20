@@ -1,15 +1,14 @@
-import { Dispatch, SetStateAction } from "react";
-
-import { Link } from "@/navigation";
-import {
-  MdOutlineHome,
-  MdOutlineGroup,
-  MdOutlineMiscellaneousServices,
-  MdOutlineElectricBolt,
-  MdAlternateEmail,
-} from "react-icons/md";
-import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
+import type { Dispatch, SetStateAction } from "react";
+import {
+  MdAlternateEmail,
+  MdOutlineElectricBolt,
+  MdOutlineGroup,
+  MdOutlineHome,
+  MdOutlineMiscellaneousServices,
+} from "react-icons/md";
+import { Link } from "@/navigation";
+import { Button } from "../ui/button";
 
 type PropsMenuMobile = {
   open: boolean;

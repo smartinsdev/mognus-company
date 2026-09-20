@@ -1,5 +1,5 @@
+import type { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
-import { useTranslations } from "next-intl";
 
 type PropsNavLink = {
   t: ReturnType<typeof useTranslations<"Index">>;

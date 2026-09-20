@@ -1,6 +1,6 @@
 "use server";
 
-import { FormSchemaType } from "@/lib/contact-schema";
+import type { FormSchemaType } from "@/lib/contact-schema";
 import { send } from "@/lib/nodemailer";
 
 export async function sendEmail(values: FormSchemaType) {

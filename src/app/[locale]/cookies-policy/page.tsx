@@ -1,7 +1,7 @@
-import { use } from "react";
-import { setRequestLocale } from "next-intl/server";
-import { locales } from "@/i18n-config";
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
+import { locales } from "@/i18n-config";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-import { FormSchemaType } from "./contact-schema";
+import type { FormSchemaType } from "./contact-schema";
 
 const transporter = nodemailer.createTransport({
   host: process.env.NODEMAILER_HOST!,

@@ -1,30 +1,27 @@
 "use client";
 
-import { useTransition } from "react";
-import Image from "next/image";
-
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { sendEmail } from "@/actions/send-email";
+import fr from "@/assets/fr.png";
+import pt from "@/assets/pt.png";
+import { FormSchema, type FormSchemaType } from "@/lib/contact-schema";
 import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 import {
   Form,
   FormControl,
   FormField,
-  FormLabel,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Card, CardContent } from "../ui/card";
 import { Textarea } from "../ui/textarea";
-import { FormSchema, FormSchemaType } from "@/lib/contact-schema";
-import { sendEmail } from "@/actions/send-email";
-import { toast } from "sonner";
-import { useTranslations } from "next-intl";
-
-import pt from "@/assets/pt.png";
-import fr from "@/assets/fr.png";
 
 export function Contact() {
   const form = useForm<FormSchemaType>({

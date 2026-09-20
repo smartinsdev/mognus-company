@@ -1,13 +1,5 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 type ServiceCardProps = {
   Icon: IconType;

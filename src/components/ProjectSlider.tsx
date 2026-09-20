@@ -1,12 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
+import React from "react";
 
 import image1 from "@/assets/1.jpg";
 import image2 from "@/assets/2.jpg";
@@ -16,7 +11,12 @@ import image5 from "@/assets/5.jpg";
 import image6 from "@/assets/6.jpg";
 import image7 from "@/assets/7.jpg";
 import image8 from "@/assets/8.jpg";
-import React from "react";
+import {
+  Carousel,
+  type CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
