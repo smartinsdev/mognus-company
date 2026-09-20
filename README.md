@@ -162,4 +162,4 @@ The project is compatible with standard Next.js hosting platforms, including Ver
 
 ## License
 
-No license file is currently included in this repository.
+MIT License
