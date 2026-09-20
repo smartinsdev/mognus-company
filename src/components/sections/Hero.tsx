@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import banner from "@/assets/banner-image 1.png";
+import banner from "@/assets/banner.webp";
 import { Link } from "@/navigation";
 import { Button } from "../ui/button";
 
@@ -48,7 +48,7 @@ export function Hero() {
 
               sizes matters as much as preload here: without it Next emits a
               1x/2x srcSet only, so a phone at DPR 2 downloads the 1920px
-              variant (69KB) instead of the 828px one (27KB). The widths below
+              variant (68KB) instead of the 828px one (25KB). The widths below
               track the container: full width until lg, then lg:w-2/3 of the
               max-w-360 (1440px) section, which caps at 960px. */}
           <Image
