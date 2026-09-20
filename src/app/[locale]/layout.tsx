@@ -10,7 +10,6 @@ import "../globals.css";
 import { Footer } from "@/components/footer/Footer";
 import NavBar from "@/components/header/NavBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Mognu's Company",
@@ -131,7 +130,6 @@ export default async function RootLayout({ children, params }: Props) {
             <NavBar />
             {children}
             <Footer />
-            <Toaster position="bottom-center" />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

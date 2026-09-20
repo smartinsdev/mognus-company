@@ -21,6 +21,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import { Toaster } from "../ui/sonner";
 import { Textarea } from "../ui/textarea";
 
 export function Contact() {
@@ -238,6 +239,12 @@ export function Contact() {
           ></path>
         </svg>
       </div>
+      {/* Mounted here rather than in the root layout: this is the only
+          component that ever calls toast(), and sonner is a 37KB gzip chunk
+          that every page, including the three static policy pages, was
+          paying for. Sonner renders into a fixed-position container, so the
+          position in the tree has no visual effect. */}
+      <Toaster position="bottom-center" />
     </section>
   );
 }
