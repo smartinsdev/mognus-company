@@ -42,7 +42,22 @@ export function Hero() {
       <div className="relative px-4 lg:absolute w-full lg:w-2/3 lg:right-0 lg:top-1/2 lg:-translate-y-1/2  overflow-hidden rounded animate-in fade-in-0 slide-in-from-right-5 duration-1000">
         <div className="relative">
           <div className="absolute top-0 left-0 h-full w-full bg-transparent lg:bg-white/15 dark:bg-black/50"></div>
-          <Image src={banner} alt="hero image" placeholder="blur" />
+          {/* preload, not priority: the latter is deprecated since Next 16.
+              This is the LCP element, so it goes in the <head> instead of
+              waiting to be discovered in the <body>.
+
+              sizes matters as much as preload here: without it Next emits a
+              1x/2x srcSet only, so a phone at DPR 2 downloads the 1920px
+              variant (69KB) instead of the 828px one (27KB). The widths below
+              track the container: full width until lg, then lg:w-2/3 of the
+              max-w-360 (1440px) section, which caps at 960px. */}
+          <Image
+            src={banner}
+            alt="hero image"
+            placeholder="blur"
+            preload
+            sizes="(min-width: 1440px) 960px, (min-width: 1024px) 66vw, 100vw"
+          />
         </div>
       </div>
     </section>
