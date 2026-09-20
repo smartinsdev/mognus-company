@@ -143,18 +143,32 @@ Auditoria das mudanças da v4 contra este código:
 | `container` não é mais configurável | classe `container` **nunca usada** | remover a config, não recriar com `@utility` |
 | `fontFamily` no `@theme` | `font-sans`/`serif`/`mono` **nunca usados** | declarar só `--font-montserrat` e `--font-poppins` |
 | `darkMode: ["class"]` removido | usado (`next-themes` com `attribute="class"`) | `@custom-variant dark (&:is(.dark *))` |
-| `shadow-sm`→`shadow-xs`, `shadow`→`shadow-sm` | 6 + 2 ocorrências | codemod |
-| `rounded-sm`→`rounded-xs`, `rounded`→`rounded-sm` | 4 + 1 ocorrências | codemod |
-| `outline-none`→`outline-hidden` | 15 ocorrências | codemod |
-| `ring` agora é 1px (era 3px) | 13 ocorrências | codemod (→ `ring-3`) |
-| `bg-gradient-to-*`→`bg-linear-to-*` | 1 ocorrência (`ProjectSlider.tsx`) | codemod |
+| `shadow-sm`→`shadow-xs`, `shadow`→`shadow-sm` | 6 + 2 ocorrências (as 2 de `shadow` nu em `ui/card.tsx` e `ui/button.tsx`) | codemod |
+| `rounded-sm`→`rounded-xs`, `rounded`→`rounded-sm` | 4 + 1 ocorrências (o `rounded` nu em `sections/Hero.tsx:38`) | codemod |
+| `outline-none`→`outline-hidden` | 15 ocorrências, 6 delas fora de `ui/` | codemod |
+| `ring` nu passou de 3px para 1px | **0 ocorrências** — não se aplica | nenhum |
+| `bg-gradient-to-*`→`bg-linear-to-*` | 1 ocorrência (`ProjectSlider.tsx:86`) | codemod |
 | Modificadores de opacidade em cores do tema | 58 usos (`text-foreground/70` e afins) | funcionam via `color-mix()` desde que as cores estejam no `@theme`; **verificar no browser** |
 | Plugin PostCSS | `postcss.config.mjs` usa `tailwindcss: {}` | trocar por `@tailwindcss/postcss: {}` |
 | Diretivas `@tailwind` | 3 em `globals.css` | trocar por `@import "tailwindcss"` |
 
-Fora de `src/components/ui/` (que a etapa 6 substitui), apenas 5 arquivos
-contêm classes afetadas: `header/Logo.tsx`, `header/MenuMobile.tsx`,
-`header/SwitcherLang.tsx`, `header/NavBar.tsx`, `ProjectSlider.tsx`.
+Fora de `src/components/ui/` (que a etapa 6 substitui), apenas 6 arquivos
+contêm classes afetadas: `header/Logo.tsx` e `header/MenuMobile.tsx`
+(`outline-none`), `header/NavBar.tsx` (`shadow-sm`), `ProjectSlider.tsx`
+(`bg-gradient-to-b`), `sections/Hero.tsx` (`rounded` nu) e
+`header/SwitcherLang.tsx` (ver abaixo).
+
+**Correção latente que a v4 introduz.** `header/SwitcherLang.tsx:25` usa
+`focus:ring-3`. A escala de `ringWidth` da v3 é 0/1/2/4/8 — não há `ring-3`, então
+hoje essa classe não produz estilo algum. Na v4 `ring-3` é válida e um anel de
+foco de 3px passará a aparecer no botão de troca de idioma. É uma mudança visual
+real, causada por um bug preexistente que a v4 corrige. Registrar no
+`MIGRATION.md`; não "consertar" reescrevendo para `ring-2` sem decisão explícita.
+
+As demais larguras de anel em uso (`ring-1` ×5, `ring-2` ×5, `ring-4` ×1) são
+explícitas e inalteradas na v4. As mudanças de padrão da v4 — largura de anel de
+3px para 1px e cor de anel de `blue-500` para `currentColor` — não afetam este
+código, porque toda ocorrência especifica largura e cor (`ring-ring`).
 
 A migração usa `npx @tailwindcss/upgrade` (ferramenta oficial, 4.3.3) para os
 codemods e a conversão `tailwind.config.ts` → `@theme`, seguida de revisão
