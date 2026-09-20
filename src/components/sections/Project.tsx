@@ -1,4 +1,4 @@
-import { ProjectSlider } from "../ProjectSlider";
+import { ProjectSlider } from "../ProjectSliderLazy";
 
 export function Project() {
   return (
