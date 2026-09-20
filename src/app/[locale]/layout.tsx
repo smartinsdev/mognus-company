@@ -104,6 +104,21 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  // Only the namespaces a Client Component actually reads: `Index.nav` for
+  // MenuMobile, `Index.contact` for ContactForm and `SwitchLang` for
+  // SwitcherLang. useTranslations resolves against the request config in a
+  // Server Component and never touches this provider, so handing it the whole
+  // catalogue serialized every string into every page's flight payload —
+  // including the 5.5KB of policy prose under `terms`, verifiable by grepping
+  // the prerendered homepage for it.
+  const clientMessages = {
+    Index: {
+      nav: messages.Index.nav,
+      contact: messages.Index.contact,
+    },
+    SwitchLang: messages.SwitchLang,
+  };
+
   return (
     <html
       lang={locale}
@@ -120,7 +135,7 @@ export default async function RootLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground antialiased font-montserrat min-h-screen scroll-smooth">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={clientMessages}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
