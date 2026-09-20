@@ -82,7 +82,17 @@ export function ProjectSlider() {
               className="flex justify-center sm:basis-1/2 md:basis-1/3 cursor-grab"
             >
               <div className="relative overflow-hidden rounded-md group">
-                <Image src={item.src} alt={item.alt} placeholder="blur" />
+                {/* The slide never fills the viewport: basis-1/3 from md,
+                    basis-1/2 from sm, minus the track's pl-4 and the
+                    section's px-8. Without sizes the 1x/2x pair both cap at
+                    the 768px source (39KB); with it a three-up desktop row
+                    takes the 640w variant at 29KB per slide. */}
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  placeholder="blur"
+                  sizes="(min-width: 1440px) 443px, (min-width: 768px) 33vw, (min-width: 640px) 50vw, calc(100vw - 5rem)"
+                />
                 <div className="absolute inset-0 w-full h-full flex items-end  bg-transparent group-hover:bg-linear-to-b group-hover:from-transparent group-hover:via-transparent group-hover:to-primary group-hover:animate-in group-hover:fade-in-0">
                   <h2 className="text-2xl relative bottom-14 pl-10 text-primary-foreground invisible group-hover:visible group-hover:animate-in group-hover:fade-in-0">
                     {item.alt}

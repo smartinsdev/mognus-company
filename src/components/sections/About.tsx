@@ -90,10 +90,17 @@ export function About() {
         >
           {t("about.buttontext.second")}
         </Link>
+        {/* Without sizes Next emits a 1x/2x srcSet only, and both candidates
+            cap at the 1320px source: every visitor downloads 93KB for a slot
+            that is never wider than 660px. The widths below track the
+            wrapper — 660px from lg, 550px from sm, the section's px-8 gutters
+            under that — which puts a DPR-1 desktop on the 750w variant at
+            43KB. */}
         <Image
           src={aboutImage}
           alt="illustrative image"
           className="w-full h-full object-cover"
+          sizes="(min-width: 1024px) 660px, (min-width: 640px) 550px, calc(100vw - 4rem)"
         />
       </div>
     </section>
