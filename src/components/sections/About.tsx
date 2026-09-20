@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { MdCheckCircle } from "react-icons/md";
 import aboutImage from "@/assets/about.png";
+import { Link } from "@/navigation";
 import { Button } from "../ui/button";
 
 export function About() {
@@ -77,7 +77,12 @@ export function About() {
       </div>
       <div className="relative overflow-hidden w-full sm:w-[550px] mx-auto md:mx-0 lg:w-[660px] lg:h-[700px] object-cover">
         <Link
-          href={"#/project"}
+          // `/#project`, not `#/project`: the old value was a link to the
+          // literal fragment `/project` on the current page, which matches no
+          // element, so the button silently did nothing. The leading slash
+          // also makes it work from the policy pages, and next-intl's Link
+          // keeps the locale prefix.
+          href={"/#project"}
           className="absolute text-xs md:text-base text-center text-primary-foreground 
         top-[52%] left-[40%] -translate-x-1/2 -translate-y-1/2 px-6 text-nowrap 
         py-3 uppercase tracking-wide z-10 bg-primary border-8 border-primary-foreground

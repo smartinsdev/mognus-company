@@ -1,7 +1,12 @@
-import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdMailOutline, MdOutlinePinDrop } from "react-icons/md";
+import { Link } from "@/navigation";
 
+// The footer renders on every page, including the three policy pages, so its
+// hrefs are rooted (`/#about`, not `#about`) and go through next-intl's Link.
+// With plain next/link the section anchors did nothing outside the homepage,
+// and the legal links pointed at unprefixed paths that only resolved because
+// src/proxy.ts redirected them — a wasted round trip on every click.
 export function Footer() {
   return (
     <footer className="bg-[#0c0a09] py-12">
@@ -16,25 +21,25 @@ export function Footer() {
         <div className="flex flex-col gap-2">
           <h2 className="text-neutral-100 text-lg">Quick Links</h2>
           <Link
-            href="#about"
+            href="/#about"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             About Us
           </Link>
           <Link
-            href="#service"
+            href="/#service"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Services
           </Link>
           <Link
-            href="#project"
+            href="/#project"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Projects
           </Link>
           <Link
-            href="#contact"
+            href="/#contact"
             className="text-sm text-neutral-400 hover:underline hover:underline-offset-4"
           >
             Contact
