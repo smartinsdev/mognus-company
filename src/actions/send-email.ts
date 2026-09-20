@@ -55,9 +55,17 @@ export async function sendEmail(values: unknown) {
     return {
       accepted: true,
     };
-  } catch {
+  } catch (error) {
     // Unconditional: the previous `error instanceof Error` guard fell through
     // and returned undefined for anything else thrown.
+    //
+    // Logged, because the caller cannot be told anything. This return is
+    // byte-identical to the rate-limited one above, deliberately — which also
+    // means a misconfigured SMTP account, a refused connection and a caller
+    // hitting the limit were indistinguishable from outside *and* from the
+    // logs. Now only the first two leave a trace.
+    console.error("sendEmail failed", error);
+
     return {
       accepted: false,
     };
