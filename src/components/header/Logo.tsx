@@ -1,8 +1,4 @@
-type LogoProps = {
-  isScrolled?: boolean;
-};
-
-export function Logo({ isScrolled }: LogoProps) {
+export function Logo() {
   return (
     <a
       title="logo Mognus"
