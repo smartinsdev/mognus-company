@@ -68,8 +68,12 @@ export function Contact() {
           fontSize: "0.875rem",
         },
       });
+      // Only clear the form once the send actually succeeded. Called outside
+      // the transition it ran before sendEmail resolved, so a failed submit
+      // showed the error toast over a form the user's text had just been
+      // wiped from.
+      form.reset();
     });
-    form.reset();
   }
 
   return (
