@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-dvh max-w-[1440px] mx-auto pt-28 relative flex flex-col items-center"
+      className="min-h-dvh max-w-360 mx-auto pt-28 relative flex flex-col items-center"
     >
       <div className="flex flex-col space-y-3 relative mb-6 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 px-4 lg:z-10">
         <span className="uppercase animate-in fade-in-0 slide-in-from-left-10 duration-1000 text-center lg:text-start tracking-widest  text-foreground/70 text-xs lg:text-sm font-semibold">

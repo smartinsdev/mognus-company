@@ -16,7 +16,7 @@ export default function NavBar() {
   const t = useTranslations("Index");
   return (
     <header className="fixed left-0 top-0 z-30 w-full bg-background border-b border-b-muted shadow-xs shadow-muted">
-      <div className="max-w-[1440px] mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-360 mx-auto px-4 py-4 flex items-center justify-between">
         <Logo />
         <NavLinks t={t} />
         {/* gap, not space-x: v4's space-x puts the margin on the right of every
