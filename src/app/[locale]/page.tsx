@@ -5,12 +5,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Project } from "@/components/sections/Project";
 import { Service } from "@/components/sections/Service";
-import { locales } from "@/i18n-config";
 import { pageMetadata } from "@/lib/metadata";
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 // No `title`: the homepage keeps the site title from the layout rather than
 // running it through the `%s | Mognu's Company` template and repeating itself.
