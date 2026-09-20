@@ -1,11 +1,9 @@
 import createMiddleware from "next-intl/middleware";
-import { defaultLocale, localePrefix, locales } from "./i18n-config";
+import { routing } from "./i18n-config";
 
-export default createMiddleware({
-  locales,
-  localePrefix,
-  defaultLocale,
-});
+const proxy = createMiddleware(routing);
+
+export default proxy;
 
 export const config = {
   // Match only internationalized pathnames
