@@ -128,6 +128,12 @@ export default async function RootLayout({ children, params }: Props) {
       contact: messages.Index.contact,
     },
     SwitchLang: messages.SwitchLang,
+    // Four short strings for error.tsx. An error boundary must be a Client
+    // Component, so unlike not-found.tsx it cannot read the catalogue on the
+    // server — these have to ship. It is the one namespace here that every
+    // page pays for and no page normally renders; at ~200 bytes that is a
+    // better trade than an untranslated error screen on a trilingual site.
+    Error: messages.Error,
   };
 
   return (

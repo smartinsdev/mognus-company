@@ -9,6 +9,12 @@
     "description": "A página que procura não existe ou foi movida.",
     "cta": "Voltar ao início"
   },
+  "Error": {
+    "title": "Algo correu mal",
+    "description": "Ocorreu um erro inesperado. Pode tentar novamente ou voltar ao início.",
+    "cta": "Tentar novamente",
+    "home": "Voltar ao início"
+  },
   "Index": {
     "nav": {
       "home": "início",

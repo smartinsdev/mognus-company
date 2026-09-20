@@ -9,6 +9,12 @@
     "description": "The page you are looking for does not exist or has been moved.",
     "cta": "Back to home"
   },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. You can try again, or head back to the homepage.",
+    "cta": "Try again",
+    "home": "Back to home"
+  },
   "Index": {
     "nav": {
       "home": "home",
