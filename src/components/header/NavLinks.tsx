@@ -1,31 +1,8 @@
 import { Link } from "@/navigation";
-import {
-  Formats,
-  MarkupTranslationValues,
-  RichTranslationValues,
-  TranslationValues,
-} from "next-intl";
-import React, { ReactElement, ReactNodeArray } from "react";
+import { useTranslations } from "next-intl";
 
 type PropsNavLink = {
-  t: {
-    <TargetKey extends any>(
-      key: TargetKey,
-      values?: TranslationValues,
-      formats?: Partial<Formats>
-    ): string;
-    rich<TargetKey extends any>(
-      key: TargetKey,
-      values?: RichTranslationValues,
-      formats?: Partial<Formats>
-    ): string | ReactElement | ReactNodeArray;
-    markup<TargetKey extends any>(
-      key: TargetKey,
-      values?: MarkupTranslationValues,
-      formats?: Partial<Formats>
-    ): string;
-    raw<TargetKey extends any>(key: TargetKey): any;
-  };
+  t: ReturnType<typeof useTranslations<"Index">>;
 };
 
 export function NavLinks({ t }: PropsNavLink) {
